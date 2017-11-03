@@ -1,0 +1,59 @@
+@import 'settings.less';
+@import 'reset.less';
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background: @background-color;
+    color: @font-body-color;
+    font-family: @font-body-family;
+    font-size: @font-body-size;
+    line-height: @line-height;
+    min-width: 320px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: @font-header-color;
+    font-family: @font-header-family;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.0rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+a {
+    color: @link-color-normal;
+    text-decoration: none;
+
+    &:active {
+        color: @link-color-active;
+    }
+
+    &:hover {
+        color: @link-color-hover;
+    }
+
+    &:active,
+    &:hover {
+        outline: 0;
+    }
+}
+
+.content-panel {
+    max-width: 768px;
+    margin: 3.054em auto;
+}

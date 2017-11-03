@@ -1,0 +1,28 @@
+baseURL             = "http://disgone.com/"
+languageCode        = "en-US"
+canonifyurls        = true
+theme               = "vault"
+layoutdir           = "layouts"
+publishdir          = "public"
+contentdir          = "content"
+title               = "DiG"
+
+[params]
+description         = "My site description"
+postcount           = 2
+
+[permalinks]
+pages = ":title/"
+posts  = "posts/:slug/"
+
+[[menu.main]]
+name                   = "Posts"
+weight                 = -120
+identifier             = "posts"
+url                    = "/posts/"
+
+[[menu.main]]
+name                   = "About"
+weight                 = -110
+identifier             = "about"
+url                    = "/about/"

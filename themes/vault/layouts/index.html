@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+{{ $totalpostscount := len (where .Data.Pages "Section" "posts") }}
+{{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
+{{ if gt $latestpostscount 0 }}
+    <div class="page-heading">Latest Posts</div>
+        <ul>
+        {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate "Section" "posts")) }}
+            <li class="post-item">
+                {{ if .Site.Params.dateform }}
+                <span class="meta"><time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format .Site.Params.dateform }}</time></span>
+                {{ else }}
+                <span class="meta"><time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format "Jan 2, 2006" }}</time></span>
+                {{ end }}
+                <a href="{{ .Permalink }}"><span>{{ .Title }}</span></a>
+            </li>
+        {{ end }}
+        {{ if gt $totalpostscount $latestpostscount }}
+            {{ range where .Site.Menus.main "Identifier" "posts" }}
+                <li class="post-item no-bullet">
+                    <a id="see-more" {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
+                </li>
+            {{ end }}
+        {{ end }}
+        </ul>
+    </div>
+{{ end }}
+{{ partial "footer.html" . }}
