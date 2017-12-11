@@ -1,19 +1,23 @@
-@base-font-size:   14px;
-@line-height: 1.618;
+@base-font-size             : 16px;
+@line-height                : 1.618;
+@font-color                 : #444444;
+@background-color           : #f5f4f2;
 
-@background-color: #f9f8f3;
-@font-color: #283c46;
+// Typography
+@font-body-family           : 'Lora', Georgia, serif;
+@font-heading-family        : 'Roboto', arial, sans-serif;
 
-@font-body-family: 'Open Sans', arial, sans-serif;
-@font-body-size:   1rem;
-@font-body-color:  @font-color;
+@font-body-size             : 1rem;
+@font-body-weight           : 400;
+@font-body-color            : @font-color;
 
-@font-header-family: 'Saira Semi Condensed', 'Georgia', serif;
-@font-header-size: 1.5rem;
-@font-header-color: darken(@font-color, 25%);
+@font-heading-size          : 1.5rem;
+@font-heading-color         : darken(@font-color, 25%);
+@font-heading-margin-bottom : .5rem;
 
-@link-color-normal: #FF0000;
-@link-color-active: #000;
-@link-color-hover: #F60;
-@link-color-focus: @link-color-active;
-@link-color-visited: @link-color-active;
+// Hyperlinks
+@link-color-normal          : @font-color;
+@link-color-active          : #000;
+@link-color-hover           : #F60;
+@link-color-focus           : @link-color-active;
+@link-color-visited         : @link-color-active;

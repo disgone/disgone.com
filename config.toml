@@ -1,28 +1,29 @@
-baseURL             = "http://disgone.com/"
-languageCode        = "en-US"
-canonifyurls        = true
-theme               = "vault"
-layoutdir           = "layouts"
-publishdir          = "public"
-contentdir          = "content"
-title               = "DiG"
-
-[params]
-description         = "My site description"
-postcount           = 2
+baseURL      = "http://disgone.com/"
+languageCode = "en-US"
+canonifyurls = true
+theme        = "vault"
+layoutdir    = "layouts"
+publishdir   = "public"
+contentdir   = "content"
+title        = "DiG"
 
 [permalinks]
-pages = ":title/"
-posts  = "posts/:slug/"
+pages        = ":title/"
+posts        = ":year/:month/:day/:slug/"
 
 [[menu.main]]
-name                   = "Posts"
-weight                 = -120
-identifier             = "posts"
-url                    = "/posts/"
+name         = "Posts"
+weight       = -120
+identifier   = "posts"
+url          = "/posts/"
 
 [[menu.main]]
-name                   = "About"
-weight                 = -110
-identifier             = "about"
-url                    = "/about/"
+name         = "About"
+weight       = -110
+identifier   = "about"
+url          = "/about/"
+
+[params]
+description  = "My site description"
+postcount    = 2
+date_format  = "January 1, 2006"

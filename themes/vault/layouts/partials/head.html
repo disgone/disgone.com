@@ -1,8 +1,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    {{ template "_internal/opengraph.html" . }}
     {{ partial "head-includes.html" . }}
 </head>

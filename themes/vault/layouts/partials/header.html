@@ -2,13 +2,13 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
 <body>
-    <nav>
-        <ul>
-            {{ range .Site.Menus.main }}
-                <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
-            {{ end }}
-        </ul>
-    </nav>
-    <section class="main">
-        <div id="content">
-            <section id="primary" class="content-panel">
+    <div class="content">
+        <nav role="navigation">
+            <ul>
+                {{ range .Site.Menus.main }}
+                    <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
+                {{ end }}
+            </ul>
+        </nav>
+        <section class="main">
+            <section id="primary" class="content-inner">

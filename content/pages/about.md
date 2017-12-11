@@ -4,10 +4,21 @@ date: 2017-10-31T14:52:31-05:00
 draft: false
 ---
 
-Along with [Ford Prefect](https://en.wikipedia.org/wiki/Ford_Prefect_\(character\)), Dent barely escapes the Earth's destruction as it is demolished to make way for a *hyperspace bypass*. Arthur spends the next several years, still wearing his dressing gown, helplessly launched from crisis to crisis while trying to straighten out his lifestyle.
+# Ciao!
 
-> He rather enjoys tea, but seems to have trouble obtaining it in the far reaches of the galaxy.
+I'm Shaun Smith.  You've stumbled across DiG, my personal space on the web.
 
-In time, he learns how to fly and carves a niche for himself as a sandwich-maker.
+In the light hours, I pose as a mild mannered software developer.  I do the same during the night too.  When I need a change of pace I enjoy woodworking and try to fit in a good video game. I'm currently based in the Dallas, Texas area.
 
-<img src="//placehold.it/300x300" class="profile">
+I've managed multiple iterations of this domain for the last 15 years, with an evolving mission statement with the latest iteration being fairly simple.  Whenenver I have a hard time finding a solution to something and manage to scrape a solution together, I'll post it.  Additionally, I'll let my selfish side roam free and post things I find interesting.
+
+Enjoy!
+
+## Around the Interwebs
+
+- [Twitter](https://twitter.com/Disgone)
+- [Github](https://github.com/Disgone)
+
+## Metadata
+
+Need to burn an hour or 10?  Here's my current time wasting games: [Factorio](https://www.factorio.com/), Civilization (any version).

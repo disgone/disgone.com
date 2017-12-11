@@ -1,13 +1,23 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 {{ partial "header.html" . }}
-<div class="content">
-    <article class="post-single">
-        <header class='post-title'>
-            <h1>{{ .Title }}</h1>
-            <section class='post-metadata'>
-                <p>Posted on  <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time></p>
-            </section>
-        </header>
-        {{ .Content }}
-    </article>
-</div>
+<article class="post post-full">
+    <header class='post-title'>
+        <section class='post-metadata'>
+            <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+            {{ if isset .Params "tags" }}
+            <ul class="post-tags">
+                {{ range $tag := .Params.tags }}
+                <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag }}</span></a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </section>
+        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    </header>
+    <section class='post-content'>
+    {{ .Content }}
+    </section>
+
+</article>
 {{ partial "footer.html" . }}

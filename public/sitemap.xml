@@ -3,12 +3,50 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://disgone.com/about/</loc>
+    <lastmod>2017-10-31T14:52:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/posts/intro/</loc>
+    <lastmod>2017-10-31T14:39:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/posts/les-mis%C3%A9rables-by-victor-hugo/</loc>
+    <lastmod>2015-12-21T04:05:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/posts/metamorphosis-by-franz-kafka/</loc>
+    <lastmod>2015-12-21T04:03:46-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/posts/use-at-instead-of-head/</loc>
+    <lastmod>2015-08-25T17:09:14-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://disgone.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://disgone.com/</loc>
+    <lastmod>2017-10-31T14:52:31-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/pages/</loc>
+    <lastmod>2017-10-31T14:52:31-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://disgone.com/posts/</loc>
+    <lastmod>2017-10-31T14:39:45-05:00</lastmod>
     <priority>0</priority>
   </url>
   

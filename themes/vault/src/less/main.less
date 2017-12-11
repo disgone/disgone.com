@@ -3,6 +3,7 @@
 
 html {
     font-family: sans-serif;
+    font-size: @base-font-size;
 }
 
 body {
@@ -12,11 +13,14 @@ body {
     font-size: @font-body-size;
     line-height: @line-height;
     min-width: 320px;
+    text-rendering: optimizeLegibility;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: @font-header-color;
-    font-family: @font-header-family;
+    color: @font-heading-color;
+    font-family: @font-heading-family;
+    margin-bottom: @font-heading-margin-bottom;
+    line-height: 1.5;
 }
 
 h1 {
@@ -53,7 +57,37 @@ a {
     }
 }
 
-.content-panel {
+p {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    vertical-align: baseline;
+}
+
+ul,dl {
+    margin-bottom: 1rem;
+}
+
+.content {
+    margin: 20px 0 0 0;
+    padding: 30px 0 0 0;
+    background: #fff;
+}
+
+.content-inner {
     max-width: 768px;
-    margin: 3.054em auto;
+    margin: 0 auto;
+
+    a {
+        text-decoration: underline;
+    }
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.post-title {
+    a {
+        text-decoration: none;
+    }
 }
