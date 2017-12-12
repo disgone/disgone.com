@@ -1,4 +1,4 @@
-baseURL      = "http://disgone.com/"
+baseURL      = "https://disgone.com/"
 languageCode = "en-US"
 canonifyurls = true
 theme        = "vault"

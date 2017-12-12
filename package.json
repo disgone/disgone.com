@@ -1,0 +1,8 @@
+{
+  "name": "vault",
+  "version": "1.0.0",
+  "description": "Theme for Hugo",
+  "repository": "https://github.com/Disgone/disgone.com.git",
+  "author": "Shaun Smith <disgone@gmail.com>",
+  "license": "MIT"
+}

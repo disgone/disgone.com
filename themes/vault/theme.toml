@@ -5,14 +5,14 @@ name        = "Vault"
 license     = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = ""
-homepage    = "http://disgone.com/"
+homepage    = "https://disgone.com/"
 tags        = []
 features    = []
 min_version = "0.29"
 
 [params]
-postcount   = 3
+postcount   = 5
 
 [author]
 name        = "Shaun Smith"
-homepage    = "http://disgone.com/"
+homepage    = "https://disgone.com/"

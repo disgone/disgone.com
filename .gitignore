@@ -3,6 +3,7 @@
 ### Hugo ###
 hugo.exe
 /public/
+
 ### Node ###
 # Logs
 logs
@@ -64,4 +65,5 @@ typings/
 # dotenv environment variables file
 .env
 
-# End of https://www.gitignore.io/api/web,hugo,node
+/themes/vault/static/js/
+/themes/vault/static/css
