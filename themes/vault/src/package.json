@@ -1,5 +1,10 @@
 {
-  "dependencies": {
+  "description": "Vault Hugo Theme",
+  "repository": {
+    "url": "https://github.com/Disgone/disgone.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.0",
     "gulp-less": "^3.3.2",
