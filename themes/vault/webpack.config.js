@@ -52,8 +52,7 @@ const config = {
                 use: [{
                     loader: 'css-loader',
                     options: {
-                        importLoaders: 1,
-                        sourceMap: true
+                        importLoaders: 1
                     }
                 },
                 {
@@ -63,15 +62,11 @@ const config = {
                             autoprefixer({
                                 browsers: ['> 1%', 'last 2 versions']
                             })
-                        ],
-                        sourceMap: true
+                        ]
                     }
                 },
                 {
-                    loader: 'less-loader',
-                    options: {
-                        sourceMap: true
-                    }
+                    loader: 'less-loader'
                 }]
             })
         }]

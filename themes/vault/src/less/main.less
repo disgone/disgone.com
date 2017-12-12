@@ -41,7 +41,6 @@ h4 {
 
 a {
     color: @link-color-normal;
-    text-decoration: none;
 
     &:active {
         color: @link-color-active;
@@ -58,11 +57,36 @@ a {
 }
 
 p {
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
     vertical-align: baseline;
 }
 
-ul,dl {
+ul,ol,dl,p {
     margin-bottom: 1rem;
+}
+
+ul {
+    li {
+        list-style: disc;
+    }
+}
+
+figure {
+    figcaption {
+        p {
+            margin: 10px 18.041237113402% 0 0;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+    }
+}
+
+.content {
+    background-color: @content-background-color;
+}
+
+.main-content {
+    max-width: 765px;
+    margin: 0 auto;
 }

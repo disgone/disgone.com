@@ -19,18 +19,18 @@ What you'll need
 
 I have a 54" TC-P54V10 and these are the parts I used.  Of course, verify your sizes based on the vesa standard your setup requires.
 
--  (2) [30" shelving track](http://amzn.to/2iGHMU5 "Shelving track")
--  (2) [12" shelving brackets](http://amzn.to/2BNpU1q "Shelving Bracket")
--  (4) [8mm x 40mm bolts](http://amzn.to/2AJuY9J "Mounting hardware")
--  (4) 8mm washers
--  (1) wood board or anything solid to use for the shelf
+- (2) [30" shelving track](http://amzn.to/2iGHMU5 "Shelving track")
+- (2) [12" shelving brackets](http://amzn.to/2BNpU1q "Shelving Bracket")
+- (4) [8mm x 40mm bolts](http://amzn.to/2AJuY9J "Mounting hardware")
+- (4) 8mm washers
+- (1) wood board or anything solid to use for the shelf
 
 The tool needs for this build are pretty minimal.  Unless you have very strong fingers, you'll need a screwdriver, wrench or ratchet depending on which type of mounting bolts you choose to use.  I also needed to use a drill (with a 3/8" bit) to create access holes in the rails for the lower mounting bolts.
 
-Instructions
+## Instructions
 
 I attached a shelf bracket to one of the rails and lined up where the shelf would lie with the top of the set, luckily, the top pre-drilled hole on the rail lined up nearly perfectly with the top mounting hole on the set. Since I would have to drill the second hole for the lower mounting location, I employed a trick to line up the two bolt holes on the rail. I got a piece of wax paper and placed it over the back of the set. I was then able to use it like tracing paper and marked where the mounting holes were. Laying the wax paper on the rail I lined up the top hole with the marked dot on the paper, and drilled the second according to the other mark. Viola! Perfectly aligned holes
 
 Once both rails are completed all that is needed is to attach the rails to the rear of the TV using the mounting bolts. I ratcheted the bolts down to semi-hand tight and added the brackets and the shelf. Here are my finished results:
 
-{{<figure src="http://disgone.com/content/images/2014/Apr/front.jpg" title="Front View" >}}
+{{<figure src="http://disgone.com/content/images/2014/Apr/front.jpg" caption="Front View" >}}
