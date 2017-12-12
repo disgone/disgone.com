@@ -1,27 +1,25 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 {{ $totalpostscount := len (where .Data.Pages "Section" "posts") }}
 {{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
 {{ if gt $latestpostscount 0 }}
-    <div class="page-heading">Latest Posts</div>
-        <ul>
-        {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate "Section" "posts")) }}
+    <ul>
+    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "posts")) }}
+        <li>
+            {{ if .Site.Params.date_format }}
+            <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format .Site.Params.date_format }}</time>
+            {{ else }}
+            <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format "Jan 2, 2006" }}</time>
+            {{ end }}
+            <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
+        </li>
+    {{ end }}
+    {{ if gt $totalpostscount $latestpostscount }}
+        {{ range where .Site.Menus.main "Identifier" "posts" }}
             <li>
-                {{ if .Site.Params.dateform }}
-                <span class="meta"><time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format .Site.Params.dateform }}</time></span>
-                {{ else }}
-                <span class="meta"><time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format "Jan 2, 2006" }}</time></span>
-                {{ end }}
-                <a href="{{ .Permalink }}"><span>{{ .Title }}</span></a>
+                <a {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
             </li>
         {{ end }}
-        {{ if gt $totalpostscount $latestpostscount }}
-            {{ range where .Site.Menus.main "Identifier" "posts" }}
-                <li>
-                    <a {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
-                </li>
-            {{ end }}
-        {{ end }}
-        </ul>
-    </div>
+    {{ end }}
+    </ul>
 {{ end }}
-{{ partial "footer.html" . }}
+{{ end }}

@@ -26,4 +26,4 @@ url          = "/about/"
 [params]
 description  = "My site description"
 postcount    = 2
-date_format  = "January 1, 2006"
+date_format  = "Jan 1, 2006"

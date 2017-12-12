@@ -1,17 +1,11 @@
 {{ define "title" }}
-  {{ if eq .Data.Singular "tag" }}Tag → {{ .Data.Term }}
-  {{ else if eq .Data.Singular "category" }}Category → {{ .Data.Term }}
-  {{ else }}Posts{{ end }}
-  {{ if isset .Site.Params "seotitle" }} | {{ .Site.Params.seotitle }}{{ else }} | {{ .Site.Title }}{{ end }}
+    {{ .Title }} | {{ .Site.Title }}
 {{ end }}
-{{ partial "header.html" . }}
-<section class="main">
-    <div class="container">
-        <div class="content">
-            <div class="markdown">
-                {{ .Content }}
-            </div>
-        </div>
-    </div>
-</section>
-{{ partial "footer.html" . }}
+
+{{ define "main" }}
+<article class="page">
+    <section class='page-content'>
+        {{ .Content }}
+    </section>
+</article>
+{{ end }}
