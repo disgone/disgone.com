@@ -8,20 +8,19 @@
 </head>
 <body>
     <div class="content">
-        <section class="main">
-            <nav role="navigation">
-                <ul>
-                    {{ range .Site.Menus.main }}
-                        <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
-                    {{ end }}
-                </ul>
-            </nav>
-            <section class="main-content">
-                {{ block "main" . }}{{ end }}
-            </section>
+        <nav role="navigation">
+            <ul>
+                {{ range .Site.Menus.main }}
+                    <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
+                {{ end }}
+            </ul>
+        </nav>
+        <section class="main-content">
+            {{ block "main" . }}{{ end }}
         </section>
     </div>
     <footer class="site-footer">
+        {{ partial "footer/footer.html" . }}
     </footer>
     <script>
         window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

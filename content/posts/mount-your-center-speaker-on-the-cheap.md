@@ -33,4 +33,6 @@ I attached a shelf bracket to one of the rails and lined up where the shelf woul
 
 Once both rails are completed all that is needed is to attach the rails to the rear of the TV using the mounting bolts. I ratcheted the bolts down to semi-hand tight and added the brackets and the shelf. Here are my finished results:
 
-{{<figure src="http://disgone.com/content/images/2014/Apr/front.jpg" caption="Front View" >}}
+{{<figure src="http://disgone.com/content/images/2014/Apr/front.jpg" caption="Front View">}}
+{{<figure src="http://disgone.com/content/images/2014/Apr/Rear.jpg" caption="Rear">}}
+{{<figure src="http://disgone.com/content/images/2014/Apr/Side-Rear.jpg" caption="Rear-Side">}}
