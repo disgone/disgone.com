@@ -10,18 +10,19 @@
     <div class="content">
         <nav role="navigation">
             <ul>
-                <li class="nav-home"><a href="{{ .Site.BaseURL }}">Home</a></li>
                 {{ range .Site.Menus.main }}
-                    <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
+                    <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
                 {{ end }}
             </ul>
         </nav>
-        <section class="main-content">
+        <main class="main-content" role="main">
             {{ block "main" . }}{{ end }}
-        </section>
+        </main>
     </div>
     <footer class="site-footer">
-        {{ partial "footer/footer.html" . }}
+        {{ block "footer" . }}
+            {{ partial "footer/footer.html" . }}
+        {{ end }}
     </footer>
     <script>
         window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

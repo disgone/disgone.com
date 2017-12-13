@@ -12,7 +12,13 @@ pages        = ":title/"
 posts        = ":year/:month/:day/:slug/"
 
 [[menu.main]]
-name         = "Posts"
+name         = "Home"
+weight       = -150
+identifier   = "home"
+url          = "/"
+
+[[menu.main]]
+name         = "Archive"
 weight       = -120
 identifier   = "posts"
 url          = "/posts/"

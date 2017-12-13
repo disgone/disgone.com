@@ -1,0 +1,25 @@
+{{ define "title" }}
+    {{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="post list">
+    {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups  }}
+    <div class="page-content archive">
+        <h3>{{ .Key }}</h3>
+        <ul>
+            {{ range .Pages }}
+            <li class="post-item">
+                <div class="post-time">{{ .Date.Format "Jan 2" }}</div>
+                <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
+                {{ .Summary | plainify | safeHTML }}
+                {{ if .Truncated }}
+                ... <a href="{{ .Permalink }}">Read more &hellip;</a>
+          {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</section>
+{{ end }}
