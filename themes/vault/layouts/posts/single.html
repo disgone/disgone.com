@@ -6,22 +6,18 @@
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 <article class="post post-full">
     <header class='post-title'>
+        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
         <section class='post-metadata'>
             <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+            &middot; {{ .ReadingTime }} minutes
         </section>
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
     </header>
     <section class='post-content'>
     {{ .Content }}
     </section>
-    <section class='post-metadata'>
-        {{ if isset .Params "tags" }}
-        <ul class="post-tags">
-            {{ range $tag := .Params.tags }}
-            <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag }}</span></a></li>
-            {{ end }}
-        </ul>
-        {{ end }}
-    </section>
+    <footer class='post-footer post-metadata'>
+        {{ partial "tags.html" . }}
+        {{ partial "social/share.html" . }}
+    </footer>
 </article>
 {{ end }}

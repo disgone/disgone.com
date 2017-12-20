@@ -1,0 +1,21 @@
+{{ define "title" }}
+    {{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="post list">
+    <h1>Archive</h1>
+    {{ $paginator := .Paginate (where .Data.Pages "Section" "posts") }}
+    {{ range $paginator.Pages.GroupByDate "2006" "desc" }}
+        <h3 class="groupby">{{ .Key }}</h3>
+        <ul>
+            {{ range sort .Pages "Date" "desc" }}
+                <li>
+                    {{ .Title }}
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+</section>
+{{ end }}

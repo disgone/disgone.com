@@ -1,9 +1,9 @@
 ---
-title: "Creating a new theme"
-date: 2017-12-11T23:23:44-06:00
-draft: false
-tags: ["csharp", "programming"]
+author: "Michael Henderson"
+date: 2014-09-28
+title: Creating a New Theme
 ---
+
 
 ## Introduction
 

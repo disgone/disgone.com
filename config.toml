@@ -30,6 +30,6 @@ identifier   = "about"
 url          = "/about/"
 
 [params]
-description  = "My site description"
-postcount    = 2
-date_format  = "Jan 1, 2006"
+description  = "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
+postcount    = 5
+date_format  = "January 1, 2006"

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="content">
-        <nav role="navigation">
+        <nav class="primary-navigation nav-inline" role="navigation">
             <ul>
                 {{ range .Site.Menus.main }}
                     <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
@@ -20,9 +20,11 @@
         </main>
     </div>
     <footer class="site-footer">
+        <section class="site-footer-content">
         {{ block "footer" . }}
             {{ partial "footer/footer.html" . }}
         {{ end }}
+        </section>
     </footer>
     <script>
         window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

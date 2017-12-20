@@ -1,0 +1,7 @@
+{{ if isset .Params "tags" }}
+<section class="post-tags">
+    {{ range $tag := .Params.tags }}
+    <a href="/tags/{{ $tag | urlize }}" title="View all posts tagged '{{ $tag }}'">{{ $tag }}</a>
+    {{ end }}
+</section>
+{{ end }}

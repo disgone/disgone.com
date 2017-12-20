@@ -85,7 +85,7 @@ figure {
 }
 
 pre {
-    background-color: #eff0f1;
+    background-color: @color-light;
     font-family: Consolas,Menlo,Courier New,monospace,sans-serif;
     overflow: auto;
     padding: 5px;
@@ -95,21 +95,131 @@ pre {
     background-color: @content-background-color;
 }
 
-.main-content {
+.main-content,
+.site-footer-content,
+.primary-navigation {
     max-width: 765px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
+.nav-inline {
+    ul {
+        display: inline;
+
+        li {
+            display: inline;
+            list-style: none;
+        }
+    }
+}
+
 .post-title {
+    text-align: center; 
+
     h1 {
+        margin-bottom: 0;
+
         a {
             text-decoration: none;
         }
     }
 
     time {
-        color: lighten(@font-color, 30%);
         text-transform: uppercase;
     }
+
+    .post-metadata {
+        color: @color-mid;
+        margin-bottom: 16px;
+    }
+}
+
+.post-footer {
+
+}
+
+.post-share {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &::before {
+        border-color: @color-light;
+        right: 0%;
+        content: "";
+        position: absolute;
+        height: 1px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        top: 50%;
+        width: 765px;
+    }
+
+    a {
+        background-color: @color-light;
+        border-color: @color-mid;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+        font-size: 15px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 10px;
+        position: relative;
+        text-align: center;
+        width: 40px;
+
+        &.facebook-share {
+            &:hover {
+                color: rgba( 59, 89, 152, 1 );
+            }
+        }
+
+        &.twitter-share {
+            &:hover {
+                color: rgba( 0, 172, 237, 1 );
+            }
+        }
+
+        &.google-share {
+            &:hover {
+                color: rgba( 221, 75, 57, 1);
+            }
+        }
+    }
+}
+
+.post-tags {
+    font-size: .75rem;
+
+    a {
+        background-color: @color-light;
+        border-color: @color-mid;
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+        font-size: .65rem;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        margin-right: 6px;
+        padding: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    border-radius: 2px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1;
+    opacity: 0;
+    padding: 5px 0px 6px 0px;
+    position: absolute;
+    text-align: center;
+    top: -40px;
+    visibility: hidden;
 }
