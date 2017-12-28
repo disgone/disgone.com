@@ -6,7 +6,7 @@ draft: false
 
 # Ciao!
 
-I'm Shaun Smith.  You've stumbled across DiG, my personal space on the web.
+I'm Shaun Smith.  You've stumbled across [disgone.com]({{< ref "/" >}}), or DiG, my personal space on the web.
 
 In the light hours, I pose as a mild mannered software developer.  I do the same during the night too.  When I need a change of pace I enjoy woodworking and try to fit in a good video game. I'm currently based in the Dallas, Texas area.
 

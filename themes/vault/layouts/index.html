@@ -1,25 +1,25 @@
 {{ define "main" }}
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 {{ $totalpostscount := len (where .Data.Pages "Section" "posts") }}
 {{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
 {{ if gt $latestpostscount 0 }}
-    <ul>
-    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "posts")) }}
-        <li>
-            {{ if .Site.Params.date_format }}
-            <time itemprop="datePublished" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format .Site.Params.date_format }}</time>
-            {{ else }}
-            <time itemprop="datePublished" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date.Format "Jan 2, 2006" }}</time>
-            {{ end }}
-            <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
-        </li>
-    {{ end }}
-    {{ if gt $totalpostscount $latestpostscount }}
-        {{ range where .Site.Menus.main "Identifier" "posts" }}
-            <li>
-                <a {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
-            </li>
+    <section class="post-feed">
+        {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts") $latestpostscount }}
+        {{ range $paginator.Pages }}
+            <article id="post- post-feed-item">
+                <header class="post-title">
+                    <h1>
+                        <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
+                    </h1>
+                    <section class='post-metadata'>
+                        <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+                    </section>
+                </header>
+                <p class="post-excerpt">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">Continue reading&hellip;</a>
+            </article>
         {{ end }}
-    {{ end }}
-    </ul>
+        {{ template "_internal/pagination.html" . }}
+    </section>
 {{ end }}
 {{ end }}

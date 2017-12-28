@@ -166,11 +166,13 @@ The first example above could be simplified as:
 
 **Example 5: If -> Else If** 
 
-    {{ if isset .Params "alt" }} 
-        {{ index .Params "alt" }}
-    {{ else if isset .Params "caption" }}
-        {{ index .Params "caption" }}
-    {{ end }}
+```go
+{{ if isset .Params "alt" }} 
+    {{ index .Params "alt" }}
+{{ else if isset .Params "caption" }}
+    {{ index .Params "caption" }}
+{{ end }}
+```
 
 ## Pipes
 

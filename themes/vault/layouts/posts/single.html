@@ -9,6 +9,7 @@
         <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
         <section class='post-metadata'>
             <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+            &middot; {{ .WordCount }} Words
             &middot; {{ .ReadingTime }} minutes
         </section>
     </header>
@@ -20,4 +21,12 @@
         {{ partial "social/share.html" . }}
     </footer>
 </article>
+<div>
+        {{ with .PrevInSection }}
+          <a class="previous" href="{{.Permalink}}">&laquo; {{.Title}}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a class="next" href="{{.Permalink}}">{{.Title}} &raquo;</a>
+        {{ end }}
+    </div>
 {{ end }}

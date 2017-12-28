@@ -1,3 +1,2 @@
-Sitemap: {{ .Site.BaseUrl}}sitemap.xml
 User-agent: *
 Allow: /

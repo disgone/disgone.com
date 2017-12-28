@@ -12,15 +12,15 @@ title: Example article
 
 **This theme includes a tranparent way to defer images. This can be enabled/disabled in the `config.toml`.**
 
-![image](/img/startup.jpg)
+![image](http://lorempixel.com/400/200/sports/)
 
 **You will just have to do two images : the normal, and a low resolution one.**
 
 ## Code
 
-**This is some code, this theme includes language highlight, optionnal as well.**
+This is some code, this theme includes language highlight, optionnal as well.
 
-```
+```css
 .dark {
   color: #333333 !important;
 }
@@ -29,5 +29,42 @@ title: Example article
 }
 .accent {
   color: #428bca !important;
+}
+```
+
+Here's some json
+
+```json
+{
+    "ProviderId": 600,
+    "ChargeTypeCode": "FUEL_COST_ADJUSTMENT_SERVICE_AREA",
+    "ChargeData": "[{\"ServiceArea\":\"Kanto\",\"Amount\":-3.1,\"Currency\":\"JPY\",\"ChargeTypeCd\":\"CHG_FCA\"},{\"ServiceArea\":\"Chubu\",\"Amount\":-4.08,\"Currency\":\"JPY\",\"ChargeTypeCd\":\"CHG_FCA\"},{\"ServiceArea\":\"Kansai\",\"Amount\":-2.47,\"Currency\":\"JPY\",\"ChargeTypeCd\":\"CHG_FCA\"}]",
+    "StartDate": "2018-01-01T00:00:00",
+    "EndDate": null,
+    "RequestedByUser": "AMBIT\\shsmith",
+    "RequestedByApp": "charge-update"
+}
+```
+
+And a dash of C#
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+
+namespace Octokit.Internal
+{
+    public interface IRequest
+    {
+        object Body { get; set; }
+        Dictionary<string, string> Headers { get; }
+        HttpMethod Method { get; }
+        Dictionary<string, string> Parameters { get; }
+        Uri BaseAddress { get; }
+        Uri Endpoint { get; }
+        TimeSpan Timeout { get; }
+        string ContentType { get; }
+    }
 }
 ```

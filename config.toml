@@ -6,6 +6,9 @@ layoutdir    = "layouts"
 publishdir   = "public"
 contentdir   = "content"
 title        = "DiG"
+enableRobotsTXT = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
 
 [permalinks]
 pages        = ":title/"
@@ -31,5 +34,5 @@ url          = "/about/"
 
 [params]
 description  = "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
-postcount    = 5
+postcount    = 3
 date_format  = "January 1, 2006"
