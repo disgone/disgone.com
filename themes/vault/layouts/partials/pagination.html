@@ -1,11 +1,11 @@
-{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-<div class="pagination clearfix">
-	{{- if .Paginator.HasPrev }}
-	<a class="pagination__item pagination__item--prev" href="{{ .Paginator.Prev.URL }}">«</a>
+{{ if or (.HasPrev) (.HasNext) }}
+<nav class="pagination nav-inline">
+	{{- if .HasPrev }}
+	<a href="{{ .Prev.URL }}">« Newer</a>
 	{{- end }}
-	<span class="pagination__item pagination__item--current">{{ .Paginator.PageNumber }}/{{ .Paginator.TotalPages }}</span>
-	{{- if .Paginator.HasNext }}
-	<a class="pagination__item pagination__item--next" href="{{ .Paginator.Next.URL }}">»</a>
+	<span>{{ .PageNumber }}/{{ .TotalPages }}</span>
+	{{- if .HasNext }}
+	<a href="{{ .Next.URL }}">Older »</a>
 	{{- end }}
 </div>
 {{ end }}

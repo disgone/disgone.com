@@ -34,5 +34,5 @@ url          = "/about/"
 
 [params]
 description  = "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
-postcount    = 3
+postcount    = 2
 date_format  = "January 1, 2006"

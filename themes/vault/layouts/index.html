@@ -1,4 +1,5 @@
 {{ define "main" }}
+
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 {{ $totalpostscount := len (where .Data.Pages "Section" "posts") }}
 {{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
@@ -6,7 +7,7 @@
     <section class="post-feed">
         {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts") $latestpostscount }}
         {{ range $paginator.Pages }}
-            <article id="post- post-feed-item">
+            <article id="post-{{ .Title | urlize}}">
                 <header class="post-title">
                     <h1>
                         <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
@@ -16,10 +17,11 @@
                     </section>
                 </header>
                 <p class="post-excerpt">{{ .Summary }}</p>
-                <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">Continue reading&hellip;</a>
+                <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}" class="read-more">Read More</a>
             </article>
         {{ end }}
-        {{ template "_internal/pagination.html" . }}
+        {{ partial "pagination.html" $paginator }}
     </section>
 {{ end }}
+
 {{ end }}
