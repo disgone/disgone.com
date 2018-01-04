@@ -35,7 +35,9 @@ functions.
 
 Accessing a predefined variable "foo":
 
-    {{ foo }}
+````go
+{{ foo }}
+````
 
 **Parameters are separated using spaces**
 

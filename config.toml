@@ -1,38 +1,39 @@
-baseURL      = "https://disgone.com/"
-languageCode = "en-US"
-canonifyurls = true
-theme        = "vault"
-layoutdir    = "layouts"
-publishdir   = "public"
-contentdir   = "content"
-title        = "DiG"
-enableRobotsTXT = true
-pygmentsUseClasses = true
+baseURL            = "https://disgone.com/"
+languageCode       = "en-US"
+canonifyurls       = true
+theme              = "vault"
+layoutdir          = "layouts"
+publishdir         = "public"
+contentdir         = "content"
+title              = "DiG"
+enableRobotsTXT    = true
 pygmentsCodeFences = true
+googleAnalytics    = "UA-771294-5"
+
 
 [permalinks]
-pages        = ":title/"
-posts        = ":year/:month/:day/:slug/"
+pages              = ":title/"
+posts              = ":year/:month/:day/:slug/"
 
 [[menu.main]]
-name         = "Home"
-weight       = -150
-identifier   = "home"
-url          = "/"
+name               = "Home"
+weight             = -150
+identifier         = "home"
+url                = "/"
 
 [[menu.main]]
-name         = "Archive"
-weight       = -120
-identifier   = "posts"
-url          = "/posts/"
+name               = "Archive"
+weight             = -120
+identifier         = "posts"
+url                = "/posts/"
 
 [[menu.main]]
-name         = "About"
-weight       = -110
-identifier   = "about"
-url          = "/about/"
+name               = "About"
+weight             = -110
+identifier         = "about"
+url                = "/about/"
 
 [params]
-description  = "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
-postcount    = 2
-date_format  = "January 1, 2006"
+description        = "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
+postcount          = 2
+date_format        = "January 1, 2006"

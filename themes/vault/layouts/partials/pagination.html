@@ -1,11 +1,17 @@
 {{ if or (.HasPrev) (.HasNext) }}
-<nav class="pagination nav-inline">
-	{{- if .HasPrev }}
-	<a href="{{ .Prev.URL }}">« Newer</a>
-	{{- end }}
-	<span>{{ .PageNumber }}/{{ .TotalPages }}</span>
-	{{- if .HasNext }}
-	<a href="{{ .Next.URL }}">Older »</a>
+<nav class="pagination nav nav-inline">
+    {{- if .HasPrev }}
+    <div class="page-back">
+        <a href="{{ .Prev.URL }}" title="Newer stuff" class="page-item">Newer</a>
+    </div>
+    {{- end }}
+    <div class="page-marker">
+        <span class="page-item">Page {{ .PageNumber }} of {{ .TotalPages }}</span>
+    </div>
+    {{- if .HasNext }}
+    <div class="page-next">
+        <a href="{{ .Next.URL }}" title="Older stuff" class="page-item page-next">Older</a>
+    </div>
 	{{- end }}
 </div>
 {{ end }}

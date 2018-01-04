@@ -21,12 +21,5 @@
         {{ partial "social/share.html" . }}
     </footer>
 </article>
-<div>
-        {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}">&laquo; {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}">{{.Title}} &raquo;</a>
-        {{ end }}
-    </div>
+{{ .Render "post-nav" }}
 {{ end }}

@@ -8,13 +8,7 @@
 </head>
 <body>
     <div class="content">
-        <nav class="primary-navigation nav-inline" role="navigation">
-            <ul>
-                {{ range .Site.Menus.main }}
-                    <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
+        {{ partial "navigation.html" . }}
         <main class="main-content" role="main">
             {{ block "main" . }}{{ end }}
         </main>
@@ -26,10 +20,6 @@
         {{ end }}
         </section>
     </footer>
-    <script>
-        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-        ga('create','UA-771294-5','auto');ga('send','pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    {{ partial "ga_async.html" .Site.GoogleAnalytics }}
 </body>
 </html>

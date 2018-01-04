@@ -3,24 +3,30 @@
 {{ end }}
 
 {{ define "main" }}
+
+<p>Posts tagged under '{{ .Title | upper }}'</p>
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
-<section class="post list">
-    <p>Posts tagged under '{{ .Title | upper }}'</p>
-    {{ $paginator := .Paginate (where .Data.Pages "Section" "posts") }}
-    {{ range $paginator.Pages.GroupByDate "2006" "desc" }}
-    <section class='post-summary'>
-    {{ range sort .Pages "Date" "desc" }}
-         <header>
-            <h2 class="title"> <a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
-            <div class="meta">
-                {{ .Date.Format $dateFormat }} - {{ .ReadingTime }} minutes
-            </div>
-        </header>
-        {{ .Summary }}
-        <a href='{{ .Permalink }}'>Read more ...</a>
-    {{ end }}
+{{ $totalpostscount := len (where .Data.Pages "Section" "posts") }}
+{{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
+{{ if gt $latestpostscount 0 }}
+    <section class="post-feed">
+        {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts") $latestpostscount }}
+        {{ range $paginator.Pages }}
+            <article class="post-item">
+                <header class="post-title">
+                    <h1>
+                        <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
+                    </h1>
+                    <section class='post-metadata'>
+                        <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+                    </section>
+                </header>
+                <p class="post-excerpt">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}" class="read-more">Read More</a>
+            </article>
+        {{ end }}
+        {{ partial "pagination.html" $paginator }}
     </section>
-    {{ end }}
-    {{ template "_internal/pagination.html" . }}
-</section>
+{{ end }}
+
 {{ end }}

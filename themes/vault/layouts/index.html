@@ -7,7 +7,7 @@
     <section class="post-feed">
         {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts") $latestpostscount }}
         {{ range $paginator.Pages }}
-            <article id="post-{{ .Title | urlize}}">
+            <article class="post-item">
                 <header class="post-title">
                     <h1>
                         <a href="{{ .Permalink }}" title="{{ .Title | safeHTMLAttr }}">{{ .Title }}</a>
