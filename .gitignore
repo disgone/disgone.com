@@ -68,3 +68,5 @@ typings/
 /themes/vault/static/js/
 /themes/vault/static/css
 /data/assets.json
+
+.vscode/
