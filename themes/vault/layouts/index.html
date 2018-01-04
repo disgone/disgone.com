@@ -5,7 +5,7 @@
 {{ $latestpostscount := .Site.Params.postcount | default $totalpostscount }}
 {{ if gt $latestpostscount 0 }}
     <section class="post-feed">
-        {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts") $latestpostscount }}
+        {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate "Section" "posts").Reverse $latestpostscount }}
         {{ range $paginator.Pages }}
             <article class="post-item">
                 <header class="post-title">
