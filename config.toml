@@ -1,9 +1,8 @@
-baseURL = "https://disgone.com/"
+baseURL = "https://www.disgone.com/"
 languageCode = "en-US"
 canonifyurls = true
 title = "Shaun Smith"
 theme = "vault"
-staticDir = "static"
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
