@@ -2,24 +2,45 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ partial "head/head.html" . }}
+    {{ partial "head/includes" . }}
 </head>
 <body>
-    <div class="content">
-        {{ partial "navigation.html" . }}
-        <main class="main-content" role="main">
-            {{ block "main" . }}{{ end }}
-        </main>
+    {{ partial "sprites" . }}
+    <!-- <svg class="icon" width="24" height="24"><use xlink:href="#twitter"></use></svg> -->
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <header id="site-header">
+                <div class="content">
+                    <nav role="navigation">
+                        <ul>
+                            {{ range .Site.Menus.main }}
+                            <li>
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="content">
+                    {{ block "main" . }}
+                    {{ end }}
+                </div>
+            </main>
+        </div>
     </div>
-    <footer class="site-footer">
-        <section class="site-footer-content">
-        {{ block "footer" . }}
-            {{ partial "footer/footer.html" . }}
-        {{ end }}
-        </section>
+    <footer id="site-footer">
+        <div class="wrapper">
+            <div class="content">
+                {{ block "footer" . }}
+                {{ end }}
+                <p class='copyright'>&copy; {{ .Site.Params.copyright }}</p>
+            </div>
+        </div>
     </footer>
-    {{ partial "ga_async.html" .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics_async.html" . }}
 </body>
 </html>

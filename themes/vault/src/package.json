@@ -1,0 +1,24 @@
+{
+  "name": "vault",
+  "description": "Vault theme for Hugo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Shaun Smith",
+  "main": "js/main.js",
+  "scripts": {
+    "build": "webpack --progress --colors"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "postcss": "^6.0.16",
+    "postcss-loader": "^2.0.10",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "assets-webpack-plugin": "^3.5.1"
+  }
+}

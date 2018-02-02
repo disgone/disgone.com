@@ -1,24 +1,20 @@
 ---
-title: "About"
+title: "Welcome"
 date: 2017-10-31T14:52:31-05:00
 draft: false
+type: "page"
 ---
 
-# Ciao!
+I'm Shaun Smith, a software developer based in Dallas, Texas.  I specialize in programming for the web, primailiy in the [.net ecosystem](https://www.microsoft.com/net).  I'm fluent in both front-end and server side development and equally enjoy coding CSS as I do designing clean APIs.
 
-I'm Shaun Smith.  You've stumbled across [disgone.com]({{< ref "/" >}}), or DiG, my personal space on the web.
+When I've reached peak code and need to go offline, you can find me in the great outdoors or in my shop doing some woodworking.  I've pledged my sports feality to the Miami Hurricanes, UCF Knights, and Texas Rangers.  I'm also a supporter of the Oxford comma and spaces rather than tabs.
 
-In the light hours, I pose as a mild mannered software developer.  I do the same during the night too.  When I need a change of pace I enjoy woodworking and try to fit in a good video game. I'm currently based in the Dallas, Texas area.
+<section class="social">
+<a href="mailto:shaunsmith@disgone.com">{{< sprite name="envelope" >}}</a>
+<a href="https://github.com/Disgone" class="gh">{{< sprite name="github" >}}</a>
+<a href="https://twitter.com/disgone" class="twit">{{< sprite name="twitter" >}}</a>
+<a href="https://plus.google.com/u/0/+ShaunSmithP" class="goog">{{< sprite name="google" >}}</a>
+<a href="https://www.facebook.com/the.shaun.smith" class="fb">{{< sprite name="facebook" >}}</a>
+</section>
 
-I've managed multiple iterations of this domain for the last 15 years, with an evolving mission statement with the latest iteration being fairly simple.  Whenenver I have a hard time finding a solution to something and manage to scrape a solution together, I'll post it.  Additionally, I'll let my selfish side roam free and post things I find interesting.
-
-Enjoy!
-
-## Around the Interwebs
-
-- [Twitter](https://twitter.com/Disgone)
-- [Github](https://github.com/Disgone)
-
-## Metadata
-
-Need to burn an hour or 10?  Here's my current time wasting games: [Factorio](https://www.factorio.com/), Civilization (any version).
+- - -

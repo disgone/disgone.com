@@ -1,10 +1,10 @@
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link rel="canonical" href="{{ . | relURL }}">
 <link rel="shortcut icon" href="/favicon.ico">
-<link href="{{ print "/css/" .Site.Data.assets.main.css | relURL  }}" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-<link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
-<link href="/vendor/syntax.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|PT+Serif:400,400i,700|Roboto+Condensed:400,700">
+<link rel='stylesheet' href='{{ print "/css/" .Site.Data.assets.main.css | relURL  }}'>
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
 {{ if .RSSLink }}
 <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 {{ end }}
-<link rel="canonical" href="{{ .Permalink }}">

@@ -1,8 +1,0 @@
-<nav class="nav nav-primary nav-inline" role="navigation">
-    <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-            <li class="nav-{{ .Identifier }} nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}-active{{end}}"><a href="{{ .URL | absLangURL }}" title="{{ .Name }}">{{ .Name }}</a></li>
-        {{ end }}
-    </ul>
-</nav>

@@ -1,10 +1,27 @@
-{{ define "title" }}Page not found{{ end }}
+{{ define "title" }}
+    Page Not Found {{ .Site.Params.tokenSeperator | markdownify }} {{ .Site.Title }}
+{{ end }}
 
 {{ define "main" }}
-  <div class="not-found">
-    <h1 class="error-emoji"></h1>
-    <p class="error-text">/* 404 page not found. */</p>
-    <p class="error-link"><a href="/">↑ Back Home ↑</a></p>
-  </div>
-  <script src="{{ "/js/bundle.js" | relURL }}"></script>
+{{ $.Scratch.Set "theme" "error" }}
+    <article class='page'>
+        <svg style="float:right;">
+            <use xlink:href="#frown"></use>
+        </svg>
+        <header>
+            <h1 class='title'>{{ .Site.Params.error_404 }}</h1>
+        </header>
+        <h2>The page you requested could not be found or doesn't exist.</h2>
+        <p>Well this is a little embarassing&hellip;  We can't seem to find the page you've asked for.</p>
+        <p>This may be a temporary issue, but can also be due to a bad link or mis-typed address. If this page previously existed, it may have been moved.  Maybe try and give the <a href="{{ .Site.BaseURL | relURL }}">homepage</a> a try?</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">if</span><span class="p">(</span><span class="n">page</span> <span class="p">==</span> <span class="n">found</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nc">page</span><span class="p">.</span><span class="n">serve</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">pleadForForgiveness</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+    </article>
 {{ end }}
