@@ -7,7 +7,7 @@ type: "page"
 
 I'm Shaun Smith, a software developer based in Dallas, Texas.  I specialize in programming for the web, primailiy in the [.net ecosystem](https://www.microsoft.com/net).  I'm fluent in both front-end and server side development and equally enjoy coding CSS as I do designing clean APIs.
 
-When I've reached peak code and need to go offline, you can find me in the great outdoors or in my shop doing some woodworking.  I've pledged my sports feality to the Miami Hurricanes, UCF Knights, and Texas Rangers.  I'm also a supporter of the Oxford comma and spaces rather than tabs.
+When I've reached peak code and need to go offline, you can find me in the great outdoors or in my shop doing some woodworking.  I've pledged my sports fealty to the Miami Hurricanes, UCF Knights, and Texas Rangers.  I'm also a supporter of the Oxford comma and spaces rather than tabs.
 
 <section class="social">
 <a href="mailto:shaunsmith@disgone.com">{{< sprite name="envelope" >}}</a>
