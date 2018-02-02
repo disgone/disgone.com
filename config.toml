@@ -1,28 +1,45 @@
-baseURL             = "http://disgone.com/"
-languageCode        = "en-US"
-canonifyurls        = true
-theme               = "vault"
-layoutdir           = "layouts"
-publishdir          = "public"
-contentdir          = "content"
-title               = "DiG"
+baseURL = "https://disgone.com/"
+languageCode = "en-US"
+canonifyurls = true
+title = "Shaun Smith"
+theme = "vault"
+staticDir = "static"
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses = true
+enableRobotsTXT = true
+googleAnalytics = "UA-771294-5"
 
 [params]
-description         = "My site description"
-postcount           = 2
+    description= "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
+    paginate = 15
+    latestposts = 5
+    error_404 = "Oh man, I can't find what you're looking for."
+    tokenSeperator = " | "
+    date_format = "January 2, 2006"
+    copyright = "2003 - 2018 Shaun Smith"
 
 [permalinks]
-pages = ":title/"
-posts  = "posts/:slug/"
+    pages = ":filename/"
+    blog = "blog/:year/:month/:day/:slug/"
+
+[author]
+    name = "Shaun Smith"
 
 [[menu.main]]
-name                   = "Posts"
-weight                 = -120
-identifier             = "posts"
-url                    = "/posts/"
+    name = "Home"
+    url = "/"
+    identifier = "home"
+    weight = 1
 
 [[menu.main]]
-name                   = "About"
-weight                 = -110
-identifier             = "about"
-url                    = "/about/"
+    name = "About"
+    url = "/about/"
+    identifier = "about"
+    weight = 2
+
+[[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    identifier = "blog"
+    weight = 3

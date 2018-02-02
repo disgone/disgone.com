@@ -3,6 +3,7 @@
 ### Hugo ###
 hugo.exe
 /public/
+
 ### Node ###
 # Logs
 logs
@@ -41,6 +42,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+package-lock.json
 
 # Typescript v1 declaration files
 typings/
@@ -63,18 +65,8 @@ typings/
 # dotenv environment variables file
 .env
 
+/themes/vault/static/js/
+/themes/vault/static/css
+/data/assets.json
 
-### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.xhtml
-
-# End of https://www.gitignore.io/api/web,hugo,node
+.vscode/

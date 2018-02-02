@@ -1,11 +1,15 @@
-{{ partial "header.html" . }}
-<section class="main">
-    <div class="container">
-        <div class="content">
-            <div class="markdown">
-                {{ .Content }}
-            </div>
-        </div>
-    </div>
-</section>
-{{ partial "footer.html" . }}
+{{ define "title" }}
+    {{ .Title | markdownify }} {{ .Site.Params.tokenSeperator | markdownify }} {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<article class='page'>
+    <header>
+        <h1 class='title'>{{ .Title }}</h1>
+        {{ with .Description }}
+        <h2 class='description'>{{ . }}</h2>
+        {{ end }}
+    </header>
+    {{ .Content }}
+</article>
+{{ end }}
