@@ -3,6 +3,7 @@ build:
   steps:
     - arjen/hugo-build@1.28.0:
         version: "0.35"
+        theme: hugo-theme-vault
         flags: --verbose
 deploy:
     steps:
