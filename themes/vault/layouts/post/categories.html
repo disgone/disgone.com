@@ -1,8 +1,0 @@
-<nav class="metadata categories">
-    <svg class="icon left"><use xlink:href="#folder"></use></svg>
-    <ul>
-        {{ range $item := .Params.categories }}
-        <li><a href="/categories/{{ $item | urlize }}" title="View all posts in '{{ $item }}'">{{ $item }}</a></li>
-        {{ end }}
-    </ul>
-</nav>

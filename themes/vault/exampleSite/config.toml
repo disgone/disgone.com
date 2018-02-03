@@ -1,9 +1,0 @@
-# Site settings
-baseurl = "/"
-languageCode = "en-us"
-title = "Vault"
-theme = "vault"
-
-[params]
-    description = "Hugo Vault theme"
-    paginate = 3

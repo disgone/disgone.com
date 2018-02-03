@@ -2,7 +2,7 @@ baseURL = "https://www.disgone.com/"
 languageCode = "en-US"
 canonifyurls = true
 title = "Shaun Smith"
-theme = "vault"
+theme = "hugo-theme-vault"
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -17,6 +17,14 @@ googleAnalytics = "UA-771294-5"
     tokenSeperator = " | "
     date_format = "January 2, 2006"
     copyright = "2003 - 2018 Shaun Smith"
+
+[social]
+    twitter = "disgone"
+    github = "disgone"
+    facebook = "the.shaun.smith"
+    stackoverflow = "253542"
+    googleplus = "118435294559780760871"
+    email = "shaunsmith@disgone.com"
 
 [permalinks]
     pages = ":filename/"

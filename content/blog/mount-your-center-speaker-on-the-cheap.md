@@ -50,5 +50,7 @@ It's pretty straight forward from here:
 
 Once the rails are attached, add your shelving brackets and shelving material and you should be ready to throw the speaker on top.
 
+<div class='dual'>
 {{< figure src="/images/mount/rear.jpg" title="Shelving track attached to the VESA mounts on the rear of the set" >}}
 {{< figure src="/images/mount/rear-side.jpg" title="The center channel, sitting on it's shelf. I used two pieces of scrap shelving to get it the desired height." >}}
+</div>

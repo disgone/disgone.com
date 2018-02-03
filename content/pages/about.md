@@ -15,6 +15,5 @@ When I've reached peak code and need to go offline, you can find me in the great
 <a href="https://twitter.com/disgone" class="twit">{{< sprite name="twitter" >}}</a>
 <a href="https://plus.google.com/u/0/+ShaunSmithP" class="goog">{{< sprite name="google" >}}</a>
 <a href="https://www.facebook.com/the.shaun.smith" class="fb">{{< sprite name="facebook" >}}</a>
+<a href="https://stackoverflow.com/users/253542" class="stack">{{< sprite name="stack-overflow" >}}</a>
 </section>
-
-- - -
