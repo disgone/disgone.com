@@ -1,0 +1,6 @@
+<svg class="icon left"><use xlink:href="#tags"></use></svg>
+<ul>
+    {{ range $tag := .Params.tags }}
+    <li><a href="/tags/{{ $tag | urlize }}" title="View all posts tagged '{{ $tag }}'">{{ $tag }}</a></li>
+    {{ end }}
+</ul>

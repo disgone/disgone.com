@@ -1,0 +1,29 @@
+.screen-lrg(@rules) {
+    @media only screen and (min-width: 992px) { @rules(); }
+}
+
+.screen-medm(@rules) {
+    @media only screen and (min-width: 768px) { @rules(); }
+}
+
+.screen-med(@rules) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) { @rules(); }
+}
+
+.screen-h(@rules) {
+    @media only screen and (min-width: 480px) and (max-width: 767px) { @rules(); }
+}
+
+.screen-hm(@rules) {
+    @media only screen and (min-width: 480px) { @rules(); }
+}
+
+.screen-v(@rules) {
+    @media only screen and (min-width: 320px) and (max-width: 479px) { @rules(); }
+}
+
+.bordered(@border-color, @border-width: 1px, @border-style: solid) {
+    border-color: @border-color;
+    border-style: @border-style;
+    border-width: @border-width;
+}

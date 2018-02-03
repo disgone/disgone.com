@@ -1,0 +1,30 @@
+{{ define "title" }}
+    {{ if eq .Kind "taxonomy" }}Tagged {{ end }}{{ .Title | markdownify | singularize }} {{ .Site.Params.tokenSeperator | markdownify }} {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+    {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+    <section class="archive">
+        <header>
+            <h1 class="title">Blog Archive</h1>
+        </header>
+        <div class="group">
+            {{ if eq .Kind "taxonomy" }}
+                <h2 class="group-title">All posts about '{{ .Title | lower }}'</h2>
+            {{ else }}
+                <h2 class="group-title">All posts</h2>
+            {{ end }}
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range .Paginator.Pages }}
+            <section class='teaser'>
+                <time class="metadata published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format $dateFormat }}</time>
+                <h2 class='title'><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                {{ with .Description }}
+                    <h3 class='description'>{{ . }}</h3>
+                {{ end }}
+            </section>
+            {{ end }}
+            {{ partial "pagination.html" $paginator }}
+        </div>
+    </section>
+{{ end }}

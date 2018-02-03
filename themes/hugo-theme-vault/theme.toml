@@ -1,0 +1,12 @@
+name = "Vault"
+license = "MIT"
+licenselink = "https://github.com/Disgone/hugo-theme-vault"
+description = ""
+homepage = "https://www.disgone.com/"
+tags = ["responsive", "minimal"]
+features = []
+min_version = "0.35"
+
+[author]
+    name = "Shaun Smith"
+    homepage = "https://www.disgone.com/"

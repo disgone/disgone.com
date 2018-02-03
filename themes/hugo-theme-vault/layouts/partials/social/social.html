@@ -1,0 +1,25 @@
+<section class="social">
+{{ with .Site.Social.email }}
+    <a href="mailto:{{.}}"><svg class="icon small"><use xlink:href="#envelope"></use></svg></a>
+{{ end }}
+
+{{ with .Site.Social.github }}
+    <a href="https://github.com/{{.}}"><svg class="icon small"><use xlink:href="#github"></use></svg></a>
+{{ end }}
+
+{{ with .Site.Social.twitter }}
+    <a href="https://twitter.com/{{.}}"><svg class="icon small"><use xlink:href="#twitter"></use></svg></a>
+{{ end }}
+
+{{ with .Site.Social.googleplus }}
+    <a href="https://plus.google.com/{{.}}"><svg class="icon small"><use xlink:href="#google"></use></svg></a>
+{{ end }}
+
+{{ with .Site.Social.facebook }}
+    <a href="https://www.facebook.com/{{.}}"><svg class="icon small"><use xlink:href="#facebook"></use></svg></a>
+{{ end }}
+
+{{ with .Site.Social.stackoverflow }}
+    <a href="https://stackoverflow.com/users/{{.}}"><svg class="icon small"><use xlink:href="#stack-overflow"></use></svg></a>
+{{ end }}
+</section>

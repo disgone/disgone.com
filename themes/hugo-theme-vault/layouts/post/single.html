@@ -1,0 +1,38 @@
+{{ define "title" }}
+    {{ .Title | markdownify }} {{ .Site.Params.tokenSeperator | markdownify }} {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+<article class='post page'>
+    <header>
+        <h1 class='title'>{{ .Title }}</h1>
+        {{ with .Description }}
+        <h2 class='description'>{{ . }}</h2>
+        {{ end }}
+        <section class='metadata'>
+            <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format $dateFormat }}</time>
+            {{ .Site.Params.tokenSeperator | markdownify }}
+            {{ .WordCount }} Words
+            {{ .Site.Params.tokenSeperator | markdownify }}
+            {{ .ReadingTime }} minute read
+        </section>
+    </header>
+
+    {{ .Content }}
+
+    <footer>
+        <nav class="metadata taxonomy">
+            {{ if isset .Params "tags" }}
+                {{ .Render "tags" }}
+            {{ end }}
+
+            {{ if isset .Params "categories" }}
+                {{ .Render "categories" }}
+            {{ end }}
+        </nav>
+
+        {{ .Render "related" }}
+    </footer>
+</article>
+{{ end }}
