@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/disgone
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.disgone.com
+  * I am disgone (https://keybase.io/disgone) on keybase.
+  * I have a public key with fingerprint BD2D AB17 7F80 49A6 D08C  EDDB E7F5 7A8D 1F3B EE71
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01011f20b41b090cbe76f180d8248554ff7d1a6e93f00a55b9b6e3df27340301bd6e0a",
+      "fingerprint": "bd2dab177f8049a6d08ceddbe7f57a8d1f3bee71",
+      "host": "keybase.io",
+      "key_id": "e7f57a8d1f3bee71",
+      "kid": "01011f20b41b090cbe76f180d8248554ff7d1a6e93f00a55b9b6e3df27340301bd6e0a",
+      "uid": "d7821d71f3005d4b9cc323a9fa3bc200",
+      "username": "disgone"
+    },
+    "merkle_root": {
+      "ctime": 1528260084,
+      "hash_meta": "eec39ff63a86d865434f1745da17f15d76c13e0331f03f22c1627b3d9394cab0",
+      "seqno": 3031893
+    },
+    "revoke": {
+      "sig_ids": [
+        "f3eeeffbc2d35a236afe4de49cdea52f71d3e75e3e0dff6968385039a13d10990f"
+      ]
+    },
+    "service": {
+      "hostname": "www.disgone.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1528260096,
+  "expire_in": 157680000,
+  "prev": "ff416c15ce62d353be040ccc381f5532522181ef80c20ad61d0823e74377242a",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.77
+Comment: https://keybase.io/crypto
+
+yMK7AnicrVNbaB1VFL2J0baptr5qfoyQaRFS03Aecx5zidYPPxSjWGux0urlzJx9
+kvEmM9eZyU36tCClP5ZKQbyaYGksEWqFViiNWr1yLW2lhaDUD2mMSLEBBQuNlYKP
+eiZEBPHT+RnmzNprrb32Pqduu6nQ2lQeeXrdxfqrjzeda4wMFTa1mcI2x4/1Fqe4
+zSnD/AsGNKRZqRxqp+ggjDA2BPku9pGHAh8EN1giLYkrGXONERorDh41CCnGfM/n
+QLUhgrqIIuxrDkg5XY4Joz5IKkkYZZbW10QrHwthJHI9xTWSAWht2Q0TSmpsqA8g
+sC3sj9O8wprzVQrdYWzP7Edp3t5/4P9n30PzdFpIgrWwMggx7fpeEFBClWcU9QOC
+UA5MIYnUIOToMO2LI3B2dDmDkJQHoJTEcZZnG2RhjsCMSMIRkq7tT6X9pUHIVN4O
+BNQzhlMluZacudQ1WLhMKywMZlrwAFNAlGKDqCEkwJwIn2qPem6g/NxGCi9FsVOk
+iGLpUesggWpchlw8DftsaqlT3OQYCgDGWO+aMkUoVwZcDa4XaFCMGIE1BcHAimnr
+x+OSSoaopzDVGHkeMs7zO3KxpBoG8+T5mBbaHx4e7l6IoDuIB62pShJncRAP2J/9
+WVZJi3k02ZbKPBr80gJPyQ8jbffEVlQhScM4slFZ5L9S83iXAyOVMIFSmCOY4BLZ
+J9eBqqU0xsU2KRYAz/uzq4FcFNiRSWwYo4QRgiUGu3t2dkpzbNeP2H5dKgRxifon
+RsysT9VnOW14kcqGEjvVxmebWwpNrYVbbm7OL1Chdcntf1+rsHdx4UB0udOsenHV
+zIfZWye/3nr4zs6nkh9Gtj/3xfpXembPm4OHx8r+QJht+PmsjKrfPLC7tqLt6i8d
+9Wcnpu548/Mlh3ZeeHtqcf3Suc3t1/ctO9HzxMwLe9ePh9Ojx09fmim/8cj0/XfX
+nvmzPjn+yc749fcWTd61a3Tp3Nrme64d6xi71jHUeLLrwuiN79f0dK5e821t7PSy
+3v0N2v7+xtcaGM2eaDnjHU+Wr7ix8vz2uYmPbqUzD33VcvneL9ee3Xtw8uPp3t/G
+v3uwduXMkX0dR9vemfgUjW/ls6de3vNHdemR35uO/rT/+n0rV089FutFcHHXuqsb
+8aMPf1CbnGs/ufvKr8da9hxoe/fHqXqp+S8pxoYN
+=XKsl
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/disgone
+
+==================================================================
