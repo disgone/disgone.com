@@ -3,8 +3,8 @@ title: "Mount Your Center Speaker on the Cheap"
 description: "A quick mount for your center channel, no wall damage required."
 date: 2010-01-05T12:48:34-06:00
 draft: false
-categories: ["Home Theatre"]
-tags: ["diy"]
+categories: ["diy"]
+tags: ["home-theatre"]
 type: post
 aliases: [
     "/2010/01/05/mount-your-center-speaker-on-the-cheap/"
@@ -22,15 +22,15 @@ I knew the CS2 would be bigger than the speaker it was replacing, but that didn'
 
 ## The Fix
 
-My first instinct was to try to find a shelf or cubby which could support the TV and allow the CS2 to sit neatly underneath.  However, finding a shelf which I felt was strudy enough that I'd trust my television set on was a bit of a strech.  Luckily, I came across [this post](http://www.avsforum.com/forum/89-speakers/630450-energy-owners-thread-289.html#post16188142) on AVS where an ingenious user had attached standard [shelf brackets](http://amzn.to/2AIXKaj) directly to the rear of the set using the VESA mounting holes. EUREKA!
+My first instinct was to try to find a shelf or cubby which could support the TV and allow the CS2 to sit neatly underneath.  However, finding a shelf which I felt was strudy enough that I'd trust my television set on was a bit of a strech.  Luckily, I came across [this post](http://www.avsforum.com/forum/89-speakers/630450-energy-owners-thread-289.html#post16188142) on AVS where an ingenious user had attached standard [shelf brackets](https://amzn.to/2DGc6un) directly to the rear of the set using the VESA mounting holes. EUREKA!
 
 I'm paranoid and was concerned about the weight of the speaker, so I decided to tweak his idea. Instead of using the shelving brackets, I could use the ubiquitous modular wire closet system shelving.  This would allow me to mount the [track](http://amzn.to/2iGHMU5) across both pairs of VESA points rather than only on upper two, speading the load a little more evenly (in my mind at least).
 
 My set is a 54" TC-P54V10 and these are the parts I used.  Of course, verify your sizes based on the [VESA standard](https://en.wikipedia.org/wiki/Flat_Display_Mounting_Interface) your setup requires.
 
-- (2) [30" shelving track](http://amzn.to/2iGHMU5 "Shelving track")
-- (2) [12" shelving brackets](http://amzn.to/2BNpU1q "Shelving Bracket")
-- (4) [8mm x 20mm screws](http://amzn.to/2GzvBD0 "Mounting hardware")
+- (2) [30" shelving track](https://amzn.to/2z9UD9J "Shelving track")
+- (2) [12" shelving brackets](https://amzn.to/2K5OHTu "Shelving Bracket")
+- (4) [8mm x 20mm screws](https://amzn.to/2PyHCRB "Mounting hardware")
 - (4) 8mm washers
 - (1) shelf material, roughly <sup>1</sup>&frasl;<sub>2</sub>" thick
 
