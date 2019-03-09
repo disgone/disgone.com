@@ -16,7 +16,7 @@ googleAnalytics = "UA-771294-5"
     error_404 = "Oh man, I can't find what you're looking for."
     tokenSeperator = " | "
     date_format = "January 2, 2006"
-    copyright = "2003 - 2018 Shaun Smith"
+    copyright = "2003 - 2019 Shaun Smith"
 
 [social]
     twitter = "disgone"
