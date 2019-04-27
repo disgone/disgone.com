@@ -12,7 +12,7 @@ type: post
 
 The internet and ads, name a more iconic duo.
 
-In exchange for nearly instant and *"free"* access to huge swatches of the worlds ~~porn~~ knowledge, all you have to do is endure a near relentless barrage of ads with every click. To complicate matters, ads are usually the visible artifacts of a campaign where your privacy should be concerned. Throw in a few [trackers](https://lifehacker.com/heres-how-internet-ads-follow-you-around-1826726345) and a dash of [malware](https://www.forbes.com/sites/thomasbrewster/2015/09/22/forbes-website-served-malware/#379157f931f9) and *Toto, I've a feeling we're not in Kansas anymore*.
+In exchange for nearly instant and *"free"* access to huge swatches of the world's ~~porn~~ knowledge, all you have to do is endure a near relentless barrage of ads with every click. To complicate matters, ads are usually the visible artifacts of a campaign where your privacy should be concerned. Throw in a few [trackers](https://lifehacker.com/heres-how-internet-ads-follow-you-around-1826726345) and a dash of [malware](https://www.forbes.com/sites/thomasbrewster/2015/09/22/forbes-website-served-malware/#379157f931f9) and *Toto, I've a feeling we're not in Kansas anymore*.
 
 Today, we'll be looking at one of the tools at your disposal to help make the internet suck a little less: [Pi-hole](https://pi-hole.net/)!
 
@@ -24,7 +24,7 @@ In less simple terms, it's a tiny [DNS](https://www.cloudflare.com/learning/dns/
 
 In my opinion, this setup has two **major** wins:
 
-- It covers *all* of your ([well behaved](https://mailarchive.ietf.org/arch/msg/dnsop/WCVv57IizUSjNb2RQNP84fBclI0)) devices on your network -- this includes laptops, tablets, phones, or even your smart fridge. Unlike browser plugins, this coverage extends to non-browser loctions such as mobile apps and [fridge-twitter](https://www.engadget.com/2013/01/08/samsungs-evernote-ready-t9000-smart-fridge-hands-on/).
+- It covers *all* of your ([well behaved](https://mailarchive.ietf.org/arch/msg/dnsop/WCVv57IizUSjNb2RQNP84fBclI0)) devices on your network -- this includes laptops, tablets, phones, or even your smart fridge. Unlike browser plugins, this coverage extends to non-browser locations such as mobile apps and [fridge-twitter](https://www.engadget.com/2013/01/08/samsungs-evernote-ready-t9000-smart-fridge-hands-on/).
 - You are in control.  Pi-hole is free and open-source and you host it on your own hardware.  The reduced risk of a [plug-in being hijacked](https://www.howtogeek.com/188346/why-browser-extensions-can-be-dangerous-and-how-to-protect-yourself/) or an author getting [cash-slapped](https://twitter.com/troyhunt/status/1037457241840877568?ref_src=twsrc%5Etfw) by somebody less-than-altruistic is probably worth the price of admission alone.
 
 ## Hardware
@@ -34,7 +34,7 @@ First things first, it should be said that despite the name you are not limited 
 This guide will be based on settings up a new Raspberry Pi 3 Model B+ from Windows 10.  Here's the shopping list.  You may already have some of these parts laying around. I already had my power supply and will be [printing my own case](https://www.thingiverse.com/thing:922740).
 
 - [Raspberry Pi 3 Model B+](https://amzn.to/2TUypAh) ([alt](https://www.arrow.com/en/products/raspberrypi3b/raspberry-pi-foundation))
-    - Pi-hole can run on pretty low-spec hardware so you have flexability here if you want to save a couple of bucks.
+    - Pi-hole can run on pretty low-spec hardware so you have flexibility here if you want to save a couple of bucks.
     - Here is Raspberry's suggested [MSRP price list](https://www.raspberrypi.org/documentation/faqs/#buying) as a guide.
 - [MicroSD Memory Card](https://amzn.to/2HX4l5y)
     - 32 GB should be sufficient, but the more the merrier.
@@ -43,12 +43,12 @@ This guide will be based on settings up a new Raspberry Pi 3 Model B+ from Windo
 - [5V 2.5A USB Power Supply](https://amzn.to/2HYN4cf)
     - There's many options at varying price points and quality.  If you're willing to spend a couple of extra $$ for some peace of mind then you should seek out UL listed supplies.
 - [Card Reader](https://amzn.to/2VngnYP)
-    - You'll need to be able to write to your MicroSD card. If by chance your system doesn't have a reader available make sure to grab a USB one.
+    - You'll need to be able to write to your MicroSD card. If your system doesn't have a reader available make sure to grab a USB one.
 - [Case](https://amzn.to/2HVF2Rj)
     - *Optional, but recommended.*  Just make sure the case is compatible with Raspberry model you intend to use.
 
 
-If you don't want to do a lot of shopping, there are kits such as the [CanaKit](https://amzn.to/2K8xpZI) available.  These kits include *nearly* everything you need to get started in a single package. There also may be cases where you lose remote access or want to connect to the Pi directly. On those occasions you'll want an a HDMI cable and USB keyboard handy.
+If you don't want to do a lot of shopping, there are kits such as the [CanaKit](https://amzn.to/2K8xpZI) available.  These kits include *nearly* everything you need to get started in a single package. There also may be cases where you lose remote access or want to connect to the Pi directly. On those occasions you'll want an HDMI cable and USB keyboard handy.
 
 ## Software
 
@@ -56,14 +56,14 @@ Time to get started!  I'll be running my Pi with a wired network connection and 
 
 ### Prep the SD card
 
-For the operating system I'll be using [Rasbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/) (v4.14 as of this writing).  Go ahead and [download a copy](https://downloads.raspberrypi.org/raspbian_lite_latest). Once that completes you can insert your SD card [write the image](https://www.raspberrypi.org/documentation/installation/installing-images/) onto the SD card.  I'll be using [Etcher](https://www.balena.io/etcher/), but feel free to use [Rufus](https://rufus.ie/) or your favorite alternative.
+For the operating system I'll be using [Rasbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/) (v4.14 as of this writing).  Go ahead and [download a copy](https://downloads.raspberrypi.org/raspbian_lite_latest). On completion you can insert your SD card [write the image](https://www.raspberrypi.org/documentation/installation/installing-images/) onto the SD card.  I'll be using [Etcher](https://www.balena.io/etcher/), but feel free to use [Rufus](https://rufus.ie/) or your favorite alternative.
 
 Etcher makes it pretty painless as you don't even need to extract the image from the zip file.  Simply pretty "Select Image", choose the zip file then proceed to select the SD card by pressing "Select drive".  All that's left is to mash 'Flash!' and wait for the process to complete.
 
 {{< figure src="/images/pihole/etcher.jpg" varient="small" title="Writing the image to the SD via Etcher is just a 1-2-3 step process." >}}
 
 ### Enable SSH
-Without a monitor we'll need to be able to connect to the Pi remotely.  For this we will need to enable [SSH](https://en.wikipedia.org/wiki/Secure_Shell) on the Pi, as it is disabled by default.  Luckily we can enable it by creating an empty file named "ssh" (without any extension) into the [root directory of the SD card](/images/pihole/pi-boot-drive.jpg).  Once the Pi boots it will detect the file and enable SSH access. If you skip this step and configure the Pi connected to a monitor you can always go back and enable SSH via [raspi-config](https://www.raspberrypi.org/documentation/remote-access/ssh/).
+Without a monitor we'll need to be able to connect to the Pi remotely.  For this we will need to enable [SSH](https://en.wikipedia.org/wiki/Secure_Shell) on the Pi, as it is disabled by default.  Luckily we can enable it by creating an empty file named "ssh" (without any extension) into the [root directory of the SD card](/images/pihole/pi-boot-drive.jpg).  When the Pi boots it will detect the file and enable SSH access. If you skip this step and configure the Pi connected to a monitor you can always go back and enable SSH via [raspi-config](https://www.raspberrypi.org/documentation/remote-access/ssh/).
 
 ## Configuration & Install
 
@@ -77,7 +77,7 @@ Raspbian comes with a configuration utility to help you set up your Pi.  It's a 
 
 {{< figure src="/images/pihole/pi-config.jpg" title="The raspi-config configuration utility" >}}
 
-You can browse the dialogs using the arrows, tab and enter.  I'd recommend the following:
+You can browse the dialog using the arrows, tab and enter.  I'd recommend the following:
 
 - *(1) Change the default password* This is pretty straight forward, just run through the dialogs and update the default password.
 - *(2) Network Options > N1 Hostname* This is the name of the machine. By default this is ````raspberrypi````
