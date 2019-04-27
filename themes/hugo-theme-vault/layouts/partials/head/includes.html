@@ -1,8 +1,8 @@
 <link rel='dns-prefetch' href='https://fonts.googleapis.com'>
 <link rel="canonical" href="{{ . | relURL }}">
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|PT+Serif:400,400i,700|Roboto+Condensed:400,700">
-<link rel='stylesheet' href='{{ print "/css/" .Site.Data.assets.main.css | relURL  }}'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|PT+Serif:400,400i,700|Roboto+Condensed:400,700" as="font">
+<link rel='stylesheet' href='{{ print "/css/" .Site.Data.assets.main.css | relURL  }}' as="style">
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 {{ if .RSSLink }}

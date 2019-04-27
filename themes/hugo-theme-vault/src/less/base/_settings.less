@@ -1,21 +1,28 @@
 // Colors
-@primary-color: #03C9F0;
-@secondary-color: #F5F4F2;
-@alt-color:  #122D51;
+@color-background: #eaeaea;
+@color-primary: #ff2e63;
+@color-secondary: #08d9d6;
+@color-alt:  #252a34;
 
-@alt-dark: darken(@alt-color, 20%);
-@alt-light: lighten(@alt-color, 20%);
+@alt-dark: darken(@color-alt, 10%);
+@alt-light: lighten(@color-alt, 10%);
 
-@font-color: @alt-color;
-@link-color: @primary-color;
+@font-color: @color-alt;
+
+@link-color: @color-primary;
+@link-color-hover: @color-secondary;
+
 @code-color: #D0D4A5;
 
-@footer-background-color: @alt-color;
-@footer-color: #9360E4;
+@footer-background-color: @color-alt;
+@footer-color: lighten(@color-alt, 50%);
+
+@figure-bg: darken(@color-background, 5%);
+@figure-caption-bg: @figure-bg;
 
 
 // Typography
-@font-size: 112.5%;
+@font-size: 106.25%;
 @line-height: 1.5;
 
 @font-family-serif: "PT Serif", Georgia, "Times New Roman", Times, serif;
