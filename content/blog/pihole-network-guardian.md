@@ -33,22 +33,22 @@ First things first, it should be said that despite the name you are not limited 
 
 This guide will be based on settings up a new Raspberry Pi 3 Model B+ from Windows 10.  Here's the shopping list.  You may already have some of these parts laying around. I already had my power supply and will be [printing my own case](https://www.thingiverse.com/thing:922740).
 
-- [Raspberry Pi 3 Model B+](https://amzn.to/2TUypAh) ([alt](https://www.arrow.com/en/products/raspberrypi3b/raspberry-pi-foundation))
+- {{< amazon asin="B07BDR5PDW" title="Raspberry Pi 3 Model B+" >}} or ([alt](https://www.arrow.com/en/products/raspberrypi3b/raspberry-pi-foundation))
     - Pi-hole can run on pretty low-spec hardware so you have flexibility here if you want to save a couple of bucks.
     - Here is Raspberry's suggested [MSRP price list](https://www.raspberrypi.org/documentation/faqs/#buying) as a guide.
-- [MicroSD Memory Card](https://amzn.to/2HX4l5y)
+- {{< amazon asin="B06XFWPXYD" title="MicroSD Memory Card" >}}
     - 32 GB should be sufficient, but the more the merrier.
     - Class 10 cards should be preferred.
     - There's a nice performance comparison available [here](https://www.jeffgeerling.com/blog/2018/raspberry-pi-microsd-card-performance-comparison-2018).
-- [5V 2.5A USB Power Supply](https://amzn.to/2HYN4cf)
+- {{< amazon asin="B075XMTQJC" title="5V 2.5A USB Power Supply" >}}
     - There's many options at varying price points and quality.  If you're willing to spend a couple of extra $$ for some peace of mind then you should seek out UL listed supplies.
-- [Card Reader](https://amzn.to/2VngnYP)
+- {{< amazon asin="B006T9B6R2" title="USB SD Card Reader" >}}
     - You'll need to be able to write to your MicroSD card. If your system doesn't have a reader available make sure to grab a USB one.
-- [Case](https://amzn.to/2HVF2Rj)
+- {{< amazon asin="B07BQN1MNN" title="Case" >}}
     - *Optional, but recommended.*  Just make sure the case is compatible with Raspberry model you intend to use.
 
 
-If you don't want to do a lot of shopping, there are kits such as the [CanaKit](https://amzn.to/2K8xpZI) available.  These kits include *nearly* everything you need to get started in a single package. There also may be cases where you lose remote access or want to connect to the Pi directly. On those occasions you'll want an HDMI cable and USB keyboard handy.
+If you don't want to do a lot of shopping, there are kits such as the {{< amazon asin="B07BC7BMHY" title="CanaKit" >}} available.  These kits include *nearly* everything you need to get started in a single package. There also may be cases where you lose remote access or want to connect to the Pi directly. On those occasions you'll want an HDMI cable and USB keyboard handy.
 
 ## Software
 

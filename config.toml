@@ -17,6 +17,7 @@ googleAnalytics = "UA-771294-5"
     tokenSeperator = " | "
     date_format = "January 2, 2006"
     copyright = "2003 - 2019 Shaun Smith"
+    associateId = "disgone0f-20"
 
 [social]
     twitter = "disgone"

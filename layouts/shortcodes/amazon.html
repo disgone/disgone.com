@@ -1,0 +1,5 @@
+{{ if .IsNamedParams }}
+<a href="https://www.amazon.com/dp/{{ .Get "asin" }}/?_encoding=UTF81&amp;tag={{ $.Site.Params.associateId }}&amp;language=en_US" {{ if or (.Get "alt") (.Get "title")}}title="{{ if .Get "alt" }} {{ .Get "alt" }} {{else}} {{ .Get "title" }} {{end}}"{{end}}>
+    {{ .Get "title" }}
+</a>
+{{ end }}
