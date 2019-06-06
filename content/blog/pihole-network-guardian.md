@@ -4,7 +4,7 @@ date: 2019-04-27T10:00:00-05:00
 draft: false
 description: "Setting up and running a network-wide ad blocker on the Raspberry Pi"
 categories: ["software"]
-tags: ["tech"]
+tags: ["tech", "raspberrypi"]
 type: post
 ---
 
@@ -26,6 +26,8 @@ In my opinion, this setup has two **major** wins:
 
 - It covers *all* of your ([well behaved](https://mailarchive.ietf.org/arch/msg/dnsop/WCVv57IizUSjNb2RQNP84fBclI0)) devices on your network -- this includes laptops, tablets, phones, or even your smart fridge. Unlike browser plugins, this coverage extends to non-browser locations such as mobile apps and [fridge-twitter](https://www.engadget.com/2013/01/08/samsungs-evernote-ready-t9000-smart-fridge-hands-on/).
 - You are in control.  Pi-hole is free and open-source and you host it on your own hardware.  The reduced risk of a [plug-in being hijacked](https://www.howtogeek.com/188346/why-browser-extensions-can-be-dangerous-and-how-to-protect-yourself/) or an author getting [cash-slapped](https://twitter.com/troyhunt/status/1037457241840877568?ref_src=twsrc%5Etfw) by somebody less-than-altruistic is probably worth the price of admission alone.
+
+> **Update 6/5/2019:** Google has [announced changes](https://www.engadget.com/2019/05/30/google-enterprise-users-escape-chrome-ad-blocking-restriction/) to how extensions work which may cause popular ad-blocking extensions from being as effective. These changes have *not yet taken effect*, but it highlights some of the fragility with the current browser/plugin system.
 
 ## Hardware
 
