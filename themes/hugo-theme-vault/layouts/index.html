@@ -1,14 +1,15 @@
 {{ define "main" }}
-    <article class="intro-page">
+    <section id="home-welcome">
         {{ .Content }}
-    </article>
+    </section>
 
     <section class="browse metadata">
         <section class="archive group">
             <h1 class="group-title">Latest Posts</h1>
             {{ $postcount := (default 5 .Site.Params.latestposts) }}
-            {{ $paginator := .Paginate (where .Data.Pages "Section" "blog") $postcount }}
-            {{ range (first $postcount .Paginator.Pages) }}
+            {{ $pages := where .Site.Pages.ByPublishDate.Reverse "Type" "post" }}
+            {{ $paginator := .Paginate ( where $pages "Params.hidden" "ne" true )}}
+            {{ range (first $postcount $paginator.Pages ) }}
             <section class='teaser'>
                 <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
                 <h2 class='title'><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

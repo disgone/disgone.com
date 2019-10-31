@@ -2,8 +2,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 
 const define = new webpack.DefinePlugin({
@@ -13,16 +13,17 @@ const define = new webpack.DefinePlugin({
 });
 
 /* Plugins */
-const cleanBuild = new CleanPlugin([
-    '../static/css/*',
-    '../static/js/*'
-], {
-    allowExternal: true,
-    verbose: true
+const cleanBuild = new CleanWebpackPlugin({
+    verbose: true,
+    cleanOnceBeforeBuildPatterns: [
+        '**/*.css',
+        '**/*.js'
+    ]
 });
 
-const extractCSS = new ExtractTextPlugin({
-    filename: getPath => getPath('css/[name].[contenthash].css').replace('css', '../css')
+const extractCSS = new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[id].css'
 });
 
 const assetsManifest = new AssetsPlugin({
@@ -47,30 +48,26 @@ const config = {
     },
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '../static', 'js')
+        path: path.join(__dirname, '../static')
     },
     module: {
         rules: [{
             test: /\.less$/,
-            use: extractCSS.extract({
-                use: [{
-                    loader: "css-loader"
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader
                 },
+                'css-loader',
                 {
                     loader: "postcss-loader",
                     options: {
                         plugins: [
-                            autoprefixer({
-                                browsers: ["> 1%", "last 2 versions"]
-                            })
+                            autoprefixer({})
                         ]
                     }
                 },
-                {
-                    loader: "less-loader"
-                }],
-                fallback: "style-loader"
-            })
+                'less-loader'
+            ]
         }]
     },
     resolve: {

@@ -12,19 +12,7 @@
     <!-- <svg class="icon" width="24" height="24"><use xlink:href="#twitter"></use></svg> -->
     <div class="wrapper-outer">
         <div class="wrapper">
-            <header id="site-header">
-                <div class="content">
-                    <nav role="navigation">
-                        <ul>
-                            {{ range .Site.Menus.main }}
-                            <li>
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            {{ end }}
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            {{ partial "header.html" . }}
             <main>
                 <div class="content">
                     {{ block "main" . }}

@@ -17,9 +17,15 @@ git clone xxx
 
 More details about installing and running themes can be found in the [Hugo documentation](https://gohugo.io/themes/installing-and-using-themes/)
 
-## Customization
+## Configuration
 
-Vault is built with yarn, webpack and less.  If you want to hack locally you can find build instructions under [src]('https://github.com/Disgone/hugo-theme-vault/tree/master/src').
+<!-- Configuration details -->
+
+<!-- Using Steps/Config Details -->
+
+## Customizing Vault
+
+<!-- Notes on customizing resources under /src -->
 
 ## Why
 
