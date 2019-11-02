@@ -453,7 +453,8 @@ sub {
   vertical-align: baseline;
 }
 sup {
-  top: -0.5em;
+  top: -0.5rem;
+  left: 0.25rem;
 }
 sub {
   bottom: -0.5em;
@@ -470,33 +471,35 @@ main {
   background: #ff2e63;
   color: #ffffff;
 }
-article h1 {
+article > h1 {
   font-size: 2.3rem;
 }
-article h2 {
+article > h2 {
   font-size: 1.85rem;
   line-height: 1.2;
 }
-article h3 {
+article > h3 {
   font-size: 1.5rem;
 }
-article h4 {
+article > h4 {
   font-style: italic;
   font-weight: 400;
 }
 article ol,
 article ul {
   margin: 1.5rem 0;
+  list-style: none;
 }
 article ol {
   counter-reset: start-from 0;
 }
 article ol li::before {
   counter-increment: start-from;
-  content: counter(start-from);
+  content: counter(start-from) ".";
+  margin-top: 0.05rem;
 }
 article ul li::before {
-  content: "•";
+  content: "▪";
   font-weight: bold;
 }
 article li {
@@ -507,7 +510,7 @@ article li > ol {
   margin: 0 0 0 1.5rem;
 }
 article li::before {
-  color: #3a4252;
+  color: #ff2e63;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
   font-weight: normal;
   left: -5em;
@@ -517,10 +520,14 @@ article li::before {
   width: 5em;
 }
 article blockquote {
-  border-left: 0.1rem solid #3a4252;
+  background-color: #dddddd;
+  border-left: 0.1rem solid #08d9d6;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
-  padding-left: 1rem;
+  padding: 1rem;
   margin-left: -1rem;
+}
+article blockquote p:last-of-type {
+  margin-bottom: 0;
 }
 article figure {
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -528,17 +535,17 @@ article figure {
 }
 article figure > * {
   display: block;
-  background-color: #FFF;
+  background-color: #dddddd;
   padding: 1rem;
 }
 article figure img {
   width: 100%;
 }
 article figcaption {
-  background-color: transparent;
+  background-color: #dddddd;
   font-size: 0.75rem;
-  margin-top: 0.75rem;
-  padding: 0;
+  margin-top: -1rem;
+  padding: 0.5rem 1rem;
 }
 article figcaption :last-child {
   margin-bottom: 0;
@@ -549,11 +556,16 @@ table {
 }
 table td,
 table th {
-  border: 1px solid #3a4252;
   padding: 0.5rem;
+  border-bottom: 1px solid #3a4252;
 }
 table th {
   font-weight: 600;
+  text-align: left;
+}
+table.bordered td,
+table.bordered th {
+  border: 1px solid #3a4252;
 }
 header .description {
   margin: 0.5rem 0;
@@ -568,7 +580,6 @@ header h1 {
 .wrapper-outer {
   background-color: #eaeaea;
   margin-top: 1em;
-  padding-top: 2em;
 }
 .wrapper {
   margin: 0 auto;
@@ -576,47 +587,6 @@ header h1 {
 }
 .content {
   margin: 0 5%;
-}
-#site-header {
-  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
-  text-align: right;
-  text-transform: uppercase;
-}
-#site-header a {
-  border-bottom: none;
-}
-#site-header li {
-  display: inline;
-  margin: 0 0 0 2em;
-}
-#site-header .branding {
-  float: left;
-}
-#site-footer {
-  background-color: #252a34;
-  color: #9ea7ba;
-  padding: 2em 0;
-}
-#site-footer::before {
-  background-color: #252a34;
-  content: "";
-  height: calc(100vh - 2em);
-  left: 0;
-  position: absolute;
-  top: 2em;
-  width: 100%;
-  z-index: -1;
-}
-#site-footer a:link,
-#site-footer a:visited {
-  color: #3a4252;
-}
-#site-footer a:hover,
-#site-footer a:active {
-  color: #ff2e63;
-}
-#home-welcome p {
-  margin: 1rem 0;
 }
 .description {
   font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
@@ -636,40 +606,13 @@ header h1 {
 .page > header > * + * {
   margin-top: 1rem;
 }
-.page article strong {
-  font-weight: 600;
-}
-.page article h2 {
-  font-size: 1.5rem;
-  line-height: 1.2;
-}
-.page article h4 {
-  font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-weight: 400;
-}
-.page article figure {
-  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
-  margin: 1.5rem 0;
-}
-.page article figure > * {
-  display: block;
-  padding: 3.1746%;
-}
-.page article figure :last-child {
-  margin-bottom: 0;
-}
-.page article figcaption {
-  font-size: 0.75rem;
-  margin-top: 1em;
-  padding: 0;
-}
 .post :not(pre) > code {
   color: #922c4c;
 }
 .post footer {
   clear: both;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
   margin-top: 1rem;
 }
 .post footer ul {
@@ -733,7 +676,9 @@ header h1 {
   }
 }
 .teaser {
-  border-top: 1px solid #3a4252;
+  border-color: #5a667e;
+  border-style: solid;
+  border-width: 0 0 1px;
   font-size: 1rem;
   padding: 0.5rem 0;
 }
@@ -762,6 +707,9 @@ header h1 {
 }
 .group .group-title {
   color: #252a34;
+  border-color: #252a34;
+  border-style: solid;
+  border-width: 0 0 0.1rem;
   margin: 0;
   padding: 0.325rem 0;
   text-transform: uppercase;
@@ -771,6 +719,9 @@ header h1 {
 }
 .group a span {
   display: block;
+}
+.fl-list li {
+  border-bottom: 1px solid #3a4252;
 }
 @media only screen and (min-width: 768px) {
   .fl-list li {
@@ -782,7 +733,6 @@ header h1 {
   }
 }
 .fl-list li > a {
-  border-top: 1px solid #3a4252;
   display: block;
   padding: 5px 5px 5px 0;
   position: relative;
@@ -843,5 +793,52 @@ header h1 {
 .pagination .next {
   grid-column: 3;
   text-align: right;
+}
+#site-header {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  padding: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+#site-header a {
+  border-bottom: none;
+}
+#site-header li {
+  display: inline;
+  margin: 0 0 0 2em;
+}
+#site-header .branding {
+  float: left;
+}
+@media only screen and (min-width: 768px) {
+  #site-header {
+    text-align: right;
+  }
+}
+#site-footer {
+  background-color: #252a34;
+  color: #9ea7ba;
+  padding: 2em 0;
+}
+#site-footer::before {
+  background-color: #252a34;
+  content: "";
+  height: calc(100vh - 2em);
+  left: 0;
+  position: absolute;
+  top: 2em;
+  width: 100%;
+  z-index: -1;
+}
+#site-footer a:link,
+#site-footer a:visited {
+  color: #3a4252;
+}
+#site-footer a:hover,
+#site-footer a:active {
+  color: #ff2e63;
+}
+#home-welcome p {
+  margin: 1rem 0;
 }
 

@@ -143,7 +143,8 @@ sub {
 }
 
 sup {
-    top: -0.5em;
+    top: -.5rem;
+    left: .25rem;
 }
 
 sub {
@@ -160,27 +161,29 @@ main {
     color: contrast(@color-primary, lighten(@color-primary, 80%), darken(@color-primary, 80%));
 }
 
+
 article {
-    h1 {
+    & > h1 {
         font-size: 2.3rem;
     }
 
-    h2 {
+    & > h2 {
         font-size: 1.85rem;
         line-height: 1.2;
     }
 
-    h3 {
+    & > h3 {
         font-size: 1.5rem;
     }
 
-    h4 {
+    & > h4 {
         font-style: italic;
         font-weight: 400;
     }
 
     ol,ul {
         margin: 1.5rem 0;
+        list-style: none;
     }
 
     ol {
@@ -189,14 +192,15 @@ article {
         li {
             &::before{
                 counter-increment: start-from;
-                content: counter(start-from);
+                content: counter(start-from) ".";
+                margin-top: .05rem;
             }
         }
     }
 
     ul li {
         &::before {
-            content: "•";
+            content: "▪";
             font-weight: bold;
         }
     }
@@ -210,7 +214,7 @@ article {
         }
 
         &::before {
-            color: @alt-light;
+            color: @color-primary;
             font-family: @font-family-sans;
             font-weight: normal;
             left: -5em;
@@ -222,10 +226,15 @@ article {
     }
 
     blockquote {
-        border-left: .1rem solid @alt-light;
+        background-color: @figure-bg;
+        border-left: .1rem solid @color-secondary;
         font-family: @font-family-sans;
-        padding-left: 1rem;
+        padding: 1rem;
         margin-left: -1rem;
+
+        p:last-of-type  {
+            margin-bottom: 0;
+        }
     }
 
     figure {
@@ -234,7 +243,7 @@ article {
 
         & > * {
             display: block;
-            background-color: #FFF;
+            background-color: @figure-caption-bg;
             padding: 1rem;
         }
 
@@ -244,10 +253,10 @@ article {
     }
 
     figcaption {
-        background-color: transparent;
+        background-color: @figure-caption-bg;;
         font-size: @font-size-small;
-        margin-top: .75rem;
-        padding: 0;
+        margin-top: -1rem;
+        padding: .5rem 1rem;
 
         :last-child {
             margin-bottom: 0;
@@ -260,12 +269,19 @@ table {
     width: 100%;
 
     td,th {
-        border: 1px solid @alt-light;
         padding: .5rem;
+        border-bottom: 1px solid @alt-light;
     }
 
     th {
         font-weight: 600;
+        text-align: left;
+    }
+
+    &.bordered {
+        td,th {
+            border: 1px solid @alt-light;
+        }
     }
 }
 
@@ -285,7 +301,6 @@ header {
 .wrapper-outer {
     background-color: @color-background;
     margin-top: 1em;
-    padding-top: 2em;
 }
 
 .wrapper {
@@ -297,59 +312,6 @@ header {
     margin: 0 5%;
 }
 
-#site-header {
-    font-family: @font-family-sans;
-    text-align: right;
-    text-transform: uppercase;
-
-    a {
-        border-bottom: none;
-    }
-
-    li {
-        display: inline;
-        margin: 0 0 0 2em;
-    }
-
-    .branding {
-        float: left;
-    }
-}
-
-#site-footer {
-    background-color: @footer-background-color;
-    color: @footer-color;
-    padding: 2em 0;
-
-    &::before {
-        background-color: @footer-background-color;
-        content: "";
-        height: ~"calc(100vh - 2em)";
-        left: 0;
-        position: absolute;
-        top: 2em;
-        width: 100%;
-        z-index: -1;
-    }
-
-    a {
-        &:link,
-        &:visited {
-            color: @alt-light;
-        }
-
-        &:hover,
-        &:active {
-            color: @link-color;
-        }
-    }
-}
-
-#home-welcome {
-    p {
-        margin: 1rem 0;
-    }
-}
 
 .description {
     font-family: @font-family-serif;
@@ -374,43 +336,6 @@ header {
             margin-top: 1rem;
         }
     }
-
-    article {
-        strong {
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            line-height: 1.2;
-        }
-
-        h4 {
-            font-family: @font-family-serif;
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        figure {
-            font-family: @font-family-sans;
-            margin: 1.5rem 0;
-
-            & > * {
-                display: block;
-                padding: 3.1746%
-            }
-
-            :last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        figcaption {
-            font-size: @font-size-small;
-            margin-top: 1em;
-            padding: 0;
-        }
-    }
 }
 
 .post {
@@ -421,6 +346,7 @@ header {
     footer {
         clear: both;
         font-family: @font-family-sans;
+        font-size: .75rem;
         margin-top: 1rem;
 
         ul {
@@ -501,7 +427,9 @@ header {
 });
 
 .teaser {
-    border-top: 1px solid @alt-light;
+    border-color: lighten(@color-alt, 25%);
+    border-style: solid;
+    border-width: 0 0 1px;
     font-size: 1rem;
     padding: .5rem 0;
 
@@ -531,11 +459,14 @@ header {
 .group {
     border-color: @font-color;
     border-style: solid;
-    border-width: .125rem 0 0;
+    border-width: .125rem 0 .0;
     margin-top: 2rem;
 
     .group-title {
         color: @font-color;
+        border-color: @font-color;
+        border-style: solid;
+        border-width: 0 0 .1rem;
         margin: 0;
         padding: .325rem 0;
         text-transform: uppercase;
@@ -552,6 +483,8 @@ header {
 
 .fl-list {
     li {
+        border-bottom: 1px solid @alt-light;
+
         .screen-medm({
             float: left;
             width: 48%;
@@ -561,9 +494,7 @@ header {
             }
         });
 
-
         & > a {
-            border-top: 1px solid @alt-light;
             display: block;
             padding: 5px 5px 5px 0;
             position: relative;
@@ -640,5 +571,66 @@ header {
     .next {
         grid-column: 3;
         text-align: right;
+    }
+}
+
+#site-header {
+    font-family: @font-family-sans;
+    padding: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+        border-bottom: none;
+    }
+
+    li {
+        display: inline;
+        margin: 0 0 0 2em;
+    }
+
+    .branding {
+        float: left;
+    }
+
+    .screen-medm({
+        & {
+            text-align: right;
+        }
+    });
+}
+
+#site-footer {
+    background-color: @footer-background-color;
+    color: @footer-color;
+    padding: 2em 0;
+
+    &::before {
+        background-color: @footer-background-color;
+        content: "";
+        height: ~"calc(100vh - 2em)";
+        left: 0;
+        position: absolute;
+        top: 2em;
+        width: 100%;
+        z-index: -1;
+    }
+
+    a {
+        &:link,
+        &:visited {
+            color: @alt-light;
+        }
+
+        &:hover,
+        &:active {
+            color: @link-color;
+        }
+    }
+}
+
+#home-welcome {
+    p {
+        margin: 1rem 0;
     }
 }

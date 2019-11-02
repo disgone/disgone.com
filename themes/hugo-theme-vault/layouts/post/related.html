@@ -1,18 +1,16 @@
 {{ $related := .Site.RegularPages.Related . | first 3 }}
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 {{ with $related }}
-<nav class="related group">
-    <h2 class="group-title">Related Content</h2>
-    <ul class='fl-list'>
+<section class="related-content group">
+    <h1 class="group-title">Related Content</h1>
     {{ range . }}
-    <li class='teaser'>
-        <time class="metadata published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format $dateFormat }}</time>
-        <h2 class='title'><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <section class='teaser'>
+        <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format $dateFormat }}</time>
+        <h2 class='title'><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'">{{ .Title }}</a></h2>
         {{ with .Description }}
-            <h3 class='description'>{{ . }}</h3>
+            <p class='description'>{{ . }}</p>
         {{ end }}
-    </li>
+    </section>
     {{ end }}
-    </ul>
-</nav>
+</section>
 {{ end }}
