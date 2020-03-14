@@ -41,7 +41,7 @@ This guide will be based on settings up a new Raspberry Pi 3 Model B+ from Windo
 - {{< amazon asin="B06XFWPXYD" title="MicroSD Memory Card" >}}
     - 32 GB should be sufficient, but the more the merrier.
     - Class 10 cards should be preferred.
-    - There's a nice performance comparison available [here](https://www.jeffgeerling.com/blog/2018/raspberry-pi-microsd-card-performance-comparison-2018).
+    - [Performance comparisons](https://www.jeffgeerling.com/blog/2018/raspberry-pi-microsd-card-performance-comparison-2018).
 - {{< amazon asin="B075XMTQJC" title="5V 2.5A USB Power Supply" >}}
     - There's many options at varying price points and quality.  If you're willing to spend a couple of extra $$ for some peace of mind then you should seek out UL listed supplies.
 - {{< amazon asin="B006T9B6R2" title="USB SD Card Reader" >}}
