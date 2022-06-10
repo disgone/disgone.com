@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
         return [path, ...nested];
     }
 
-    const basePath = path.resolve(__dirname, '../static/images');
+    const basePath = path.resolve(__dirname, '../content/blog');
     console.log(basePath);
     const directories = getDirectories(basePath);
 

@@ -1,0 +1,14 @@
+{{ $src := .Get "src" }}
+
+{{ $title := default "" (.Get "title") }}
+{{ $variant := default "normal" (.Get "variant") }}
+
+{{ $img := .Page.Resources.GetMatch $src }}
+{{ $webp := .Page.Resources.GetMatch (replace $src ".jpg" ".webp") }}
+
+<figure class="{{ $variant }}">
+    {{ .Inner }}
+    <figcaption>
+        <p>{{ .Get "title" | markdownify }}</p>
+    </figcaption>
+</figure>
