@@ -11,7 +11,7 @@ aliases: [
 ]
 ---
 
-{{< figure src="/images/mount/front.jpg" varient="small" title="The mounted speaker" >}}
+{{< figure src="/images/mount/front.jpg" variant="small" title="The mounted speaker" >}}
 
 Santa was gracious enough to deliver a Polk CS2 center speaker for my home theatre system last month.  This provided one more step down the upgrade path from my original Onyko HT-R340, a budget 5.1 home theatre in a box.  There was just one catch between me and center channel bliss -- where to put it.
 

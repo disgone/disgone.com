@@ -8,7 +8,7 @@ tags: ["tech", "raspberrypi"]
 type: post
 ---
 
-{{< figure src="/images/pihole/pi-case.jpg" varient="small" >}}
+{{< figure src="/images/pihole/pi-case.jpg" variant="small" >}}
 
 The internet and ads, name a more iconic duo.
 
@@ -62,7 +62,7 @@ For the operating system I'll be using [Rasbian Stretch Lite](https://www.raspbe
 
 Etcher makes it pretty painless as you don't even need to extract the image from the zip file.  Simply pretty "Select Image", choose the zip file then proceed to select the SD card by pressing "Select drive".  All that's left is to mash 'Flash!' and wait for the process to complete.
 
-{{< figure src="/images/pihole/etcher.jpg" varient="small" title="Writing the image to the SD via Etcher is just a 1-2-3 step process." >}}
+{{< figure src="/images/pihole/etcher.jpg" variant="small" title="Writing the image to the SD via Etcher is just a 1-2-3 step process." >}}
 
 ### Enable SSH
 Without a monitor we'll need to be able to connect to the Pi remotely.  For this we will need to enable [SSH](https://en.wikipedia.org/wiki/Secure_Shell) on the Pi, as it is disabled by default.  Luckily we can enable it by creating an empty file named "ssh" (without any extension) into the [root directory of the SD card](/images/pihole/pi-boot-drive.jpg).  When the Pi boots it will detect the file and enable SSH access. If you skip this step and configure the Pi connected to a monitor you can always go back and enable SSH via [raspi-config](https://www.raspberrypi.org/documentation/remote-access/ssh/).
