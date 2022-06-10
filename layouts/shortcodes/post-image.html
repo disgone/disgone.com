@@ -1,0 +1,18 @@
+{{ $src := .Get "src" }}
+{{ $img := .Page.Resources.GetMatch $src }}
+{{ $webp := .Page.Resources.GetMatch (replace $src ".jpg" ".webp") }}
+{{ $alt := default "" (.Get "alt") }}
+
+{{ with $img }}
+    {{ if (not $webp) }}
+        <img src="{{ .RelPermalink }}" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" />
+    {{ else }}
+        <picture>
+            {{ with $webp }}
+            <source srcset="{{ .RelPermalink }}" type="{{ .MediaType }}" width="{{ .Width }}" height="{{ .Height }}">
+            {{ end }}
+            <source srcset="{{ .RelPermalink }}" type="{{ .MediaType }}" width="{{ .Width }}" height="{{ .Height }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" />
+        </picture>
+    {{ end }}
+{{ end }}
