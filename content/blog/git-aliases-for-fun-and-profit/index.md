@@ -2,7 +2,6 @@
 title: "Git aliases for fun and profit"
 description: "Using git aliases to streamline your workflow"
 date: 2022-06-21T10:51:14-05:00
-draft: true
 categories: ["code"]
 tags: ["git", "git-alias"]
 type: post
