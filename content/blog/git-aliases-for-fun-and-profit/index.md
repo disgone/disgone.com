@@ -48,7 +48,7 @@ Now, whenever we want to edit our `.gitconfig` manually, rather than typing out 
 
 These are fairly simple scenarios, let's see what else aliases have to offer.
 
-## Powering up
+## Shell support
 
 Git aliases can shorten our common command and flag combos -- but wait, there's more!  Aliases can also reference shell commands. Take for example the following:
 
@@ -57,12 +57,12 @@ Git aliases can shorten our common command and flag combos -- but wait, there's 
 aliases = "!git config -l | grep ^alias\\. | cut -c 7- | sort"
 ```
 
-Notice the bang or exclamation mark `!` -- this notifies git that everything following it will be a shell command. In this case we pipe our configuration, extract those starting with `alias.` and list them alphabetically.
-
-Shell functions are also supported.  Take for example the following alias which sets the default branch for `origin`:
+Notice the bang or exclamation mark `!` -- this notifies git that everything following it will be a shell command. In this case we pipe our configuration, extract the `alias.` entries, and list them alphabetically.
+ 
+To go a step further, shell support also allows use to use shell functions. The following alias sets the default branch which is tracked by `origin`:
 
 ```bash
-# Sets the default branch for a remote
+# Sets the default branch for a remote. If no name is specified, use 'main'
 set-default = "!f() { name=${1-main}; git remote set-head origin $name; git symbolic-ref refs/remotes/origin/HEAD; };f"
 ```
 
@@ -74,35 +74,20 @@ This can be hard to read if you're not familiar with the syntax, so let's break 
 - `git remote set-head origin $name` sets the default branch for origin to our variable value from `name`
 - `git symbolic-ref refs/remotes/origin/HEAD` prints the now default branch as a verification
 
-We can now run `git set-default my-branch` which will track the branch "my-branch" as the default branch for origin (more on how this may be helpful [later](#default-alias)). If we were to run `git set-default` then we'd track `main` as the default branch since no branch name was provided in the first argument.
+We can now run `git set-default my-branch` which will track the branch "my-branch" as the default branch for origin (more on how this may be helpful [later](#default-helper)). If we were to run `git set-default` then we'd track `main` as the default branch since no branch name was provided in the first argument.
 
 ## My favorite aliases
 
 ### Git lists
 
-The way you list things in git can vary depending on what you want to list. For example, if you want to list your local branches you'd use `branch -l`.  If you want to list your stashes you'd use `stash list`. For me, using pluralization is more intuitive, so I created aliases for `branches` and `stashes`:
+Listing things in git can vary depending on the command. For example, if you want to list your local branches you could use `branch -l`.  If you want to list your stashes you'd use `stash list`. Rather than having to remember these, I find pluralization mor intuitive.
 
 ```bash
+# List branches by name
 branches = branch -l
-stashes = stash list
+# List stashes, with a 'human' friendly date as the index.
+stashes = stash list --date=human
 ```
-
-### Branch naming
-
-The group I work with has chosen a ...er, unique naming standard that they try to follow. Part of the fun is the rules for how branches are named are all over the place.  Feature branches for instance are formatted as `feature/{name}`, work tasks for tracked from the feature in story branches `story/{story-#}-{name}`.  Meanwhile, hotfixes for production must follow `hotfixes/h-{ticket-#}-{name}`. Hotfix branches naming is extremely finicky, as it's very easy to use the singular "hotfix" or forget the "h-" prefix -- both of which result in the build not running.  To try to tame this madness I've added the following:
-
-```bash
-# git feature my-feature-name => feature/my-feature-name
-feature = "!f() { NAME=${1}; git checkout -b feature/$NAME; };f"
-
-# git story my-story-name 51120 => story/51120-my-story-name
-story = "!f() { WORKNUM=${2-'000'}; NAME=${1-'story-name'}; git checkout -b story/$WORKNUM-$NAME; };f"
-
-# git hotfix my-bug-name 5110 => hotfixes/h-5110-my-bug-name
-hotfix = "!f() { WORKNUM=${2-'000'}; NAME=${1}; git checkout -b hotfixes/h-$WORKNUM-$NAME; };f"
-```
-
-While this is tailored to adhere to my teams wacky requirements, this is pretty easily modified to meet your own needs.
 
 ### Human logs
 
@@ -130,6 +115,64 @@ Pushing changes with `-force` can be dangerous and cause your co-workers to hate
 pushf = push --force-with-lease
 ```
 
-## Tradeoffs & Pitfalls
+### Branch naming
 
-Everything has a price and aliases are no different. There is a real danger to relying on them _too much_. Repetition is a huge part of learning. Hiding that complexity behind an alias and removing that repetition means you could be learning to use the alias rather than the command and argument behind it fooling yourself into thinking you know more than you actually do. It's a proven fact that programming interviews are the worst, so it's not much of a stretch to imagine being asked to demonstrate a simple git command on a whiteboard -- only to realize you only remember that very personal alias and not the actual git command!
+The group I work has a branch naming strategy that is a bit, er,  haphazard for the uninitiated.  Feature branches for instance are formatted as `feature/{name}`, task work done against a feature is tracked as `story/{story-#}-{name}`.  Meanwhile, if there's a hotfix for production, it's formatted as `hotfixes/h-{ticket-#}-{name}` which is especially troublesome because it's so easy to leave "hotfix" singular rather than "hotfixes" or forget that h- prefix -- both of which are required to trigger the correct ci/cd flow.
+
+```bash
+# git feature my-feature-name => feature/my-feature-name
+feature = "!f() { NAME=${1}; git checkout -b feature/$NAME; };f"
+
+# git story my-story-name 51120 => story/51120-my-story-name
+story = "!f() { WORKNUM=${2-'000'}; NAME=${1-'story-name'}; git checkout -b story/$WORKNUM-$NAME; };f"
+
+# git hotfix my-bug-name 5110 => hotfixes/h-5110-my-bug-name
+hotfix = "!f() { WORKNUM=${2-'000'}; NAME=${1}; git checkout -b hotfixes/h-$WORKNUM-$NAME; };f"
+```
+
+While this is tailored to adhere to my teams wacky requirements, this is pretty easily modified to meet your own needs.
+
+### Checkpoint + Undo
+
+Often I get to a point when writing code where I'm generally happy with what I've written, but I want to experiment a bit.  I try my best to ensure each commit is able to build and run, but perhaps we're not to that point for a full commit.  For these situations I like to use 'checkpoint' commits:
+
+```bash
+# Creates a checkpoint commit with all files -- including untracked
+checkpoint = !git add -A && git commit -m 'CHECKPOINT'
+    
+# Revert the previous commit
+undo = reset HEAD~1 --mixed
+```
+
+Now I can safely make changes built on top of my current progress without fear of losing my place.  If things don't work out I can use `git undo` to roll back, and if things went well and the code is ready I can use `git commit -a --amend` to promote my checkpoint to a full commit.
+
+### <a id="default-helper"></a>Default branch helper
+
+It can be tempting to use hard coded branch names in aliases, but with the shift in terminology to prefer `main` (or anything else really) over `master` this can complicate alias creation.  To help alleviate this, we can use a helper for when we need to reference the default branch.
+
+```bash
+default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+```
+
+Now `git default` will return the name of the currently tracked branch.
+
+You can change the default tracked branch using `git remote set-head origin {branch}`.  I like to verify after making this change, so I've created the following alias:
+
+```bash
+# Sets the branch being tracked as origin/head
+# and prints the default branch path after completion.
+set-default = "!f() { name=${1-master}; git remote set-head origin $name; git symbolic-ref refs/remotes/origin/HEAD; };f"
+```
+
+The `git default` alias can now be used in places where you need to reference the default branch.  For example, the following will clean up any local branches which have been merged:
+
+```bash
+trim-merged = "!f() { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs git branch -d; };f"
+```
+
+If you're working on a team it's a good idea to keep up with remote changes.  `git pullin` will pull rebase any remote commits into your local:
+
+```bash
+# Pull changes for a branch and rebase them into our working directory
+pullin = "!f() { DEFAULT=$(git default); git fetch origin && git rebase origin/${1-$DEFAULT}; };f"
+```
