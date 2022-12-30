@@ -1,0 +1,35 @@
+name: Build/Deploy for Digital Ocean Host
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.91.2'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        run: rsync --delete -rvzh ./public/ github@disgone.com:/var/www/disgone.com/
