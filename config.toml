@@ -16,7 +16,7 @@ googleAnalytics = "UA-771294-5"
     error_404 = "Oh man, I can't find what you're looking for."
     tokenSeperator = " | "
     date_format = "January 2, 2006"
-    copyright = "2003 - 2022 Shaun Smith"
+    copyright = "2003 - 2023 Shaun Smith"
     associateId = "disgone0f-20"
 
 [social]
@@ -24,7 +24,6 @@ googleAnalytics = "UA-771294-5"
     github = "disgone"
     facebook = "the.shaun.smith"
     stackoverflow = "253542"
-    googleplus = "118435294559780760871"
     email = "shaunsmith@disgone.com"
 
 [permalinks]
