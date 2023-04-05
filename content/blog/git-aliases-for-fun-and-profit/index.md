@@ -11,27 +11,27 @@ Odds are if you're using version control today it's probably git. For this post,
 
 ## What is an alias?
 
-In short, an alias is simply a way to add shorthand syntax for a [command](https://git-scm.com/docs/git#_high_level_commands_porcelain) or set of commands.
+Git aliases are a way to create shortcuts or abbreviations for commonly used git [command](https://git-scm.com/docs/git#_high_level_commands_porcelain). They allow you to define a new command that combines one or more existing git commands or options into a shorter and more convenient command that you can easily remember and use.
 
-Aliases can be added to your `.gitconfig` manually by hand or via the `config` command. As a simple example, lets set up a shortcut for one of the more common commands `checkout` using the `config` command:
+Aliases can be added to your `.gitconfig` manually or directly using the `config` command. For example, to create a shortcut for the checkout command, use the following command:
 
 ```bash
 # Adds 'co' as an alias for checkout to your global config
 git config --global alias.co checkout
 ```
 
-Now we can perform a checkout with `git co <branch>` rather than having to fully type out `git checkout <branch>`.  Your inner lazy nods approvingly!  
+This command sets up the co alias for checkout in your global config file. Now you can perform a checkout by typing git co <branch> instead of git checkout <branch>. Your inner productivity guru nods approvingly!
 
-Let's open our `.gitconfig` file and view the changes that the `config` command made for us.  If you're unsure where your `.gitconfig` file is located have no fear -- `git config --global -e` will open your `.gitconfig` in your default editor. If you're following along you should see an `[alias]` section with our `co` alias added below it:
+After creating an alias with the `config` command, we can open our `.gitconfig` file to view the changes. If you're not sure where your `.gitconfig` file is located, you can use the command git config --global -e to open it in your default editor. You should see a new section called [alias] with our co alias listed below it:
 
 ```bash
 [alias]
 co = checkout
 ```
 
-Aliases follow the format `<alias-name> = <command [args]>` which can be read as `<alias-name>` is equivalent to `<command>`. For example, our checkout alias would simply be read as `co` is equivalent to `checkout`.
+In the `.gitconfig` file, the [alias] section defines shortcuts that can be used in place of git commands. The format for defining an alias is `<alias-name> = <command [args]>`, which means that `<alias-name>` is equivalent to `<command>`. For example, our co alias is equivalent to the checkout command.
 
-Aliases also support command arguments. Take the command for opening our `.gitconfig` file for editing -- `git config --global -e`. Notice that we have a command `config` as well as two associated arguments `--global` and `-e`.  Let's add an alias to make it easier to edit our config file using this command.
+Aliases also support command arguments. Take the command for opening our `.gitconfig` file for editing -- `git config --global -e`. Notice that we have a command `config` as well as two associated arguments `--global` and `-e`. Let's add an alias to make it easier to edit our config file using this command.
 
 Previously we used the git command the `config` to create an alias for us but for this example let's practice adding our alias to our `.gitconfig` manually.
 
@@ -43,57 +43,59 @@ Open up your `.gitconfig` file (`git config --global -e`). Find your `[alias]` s
 myconfig = config --global -e
 ```
 
-Now, whenever we want to edit our `.gitconfig` manually, rather than typing out `git config --global -e` all we'll need is use is `git myconfig`. Very nice!
+Now, whenever we want to edit our `.gitconfig` file manually, instead of typing out `git config --global -e`, all we need to do is use `git myconfig` instead. This will make editing our `.gitconfig` file much easier! Very nice!
 
 These are fairly simple scenarios, let's see what else aliases have to offer.
 
 ## Shell support
 
-Git aliases can shorten our common command and flag combos -- but wait, there's more!  Aliases can also reference shell commands. Take for example the following:
+Git aliases can shorten our common command and flag combos -- but wait, there's more!  Aliases can also reference shell commands. For example, the following alias lists all available aliases when you can't remember them:
 
 ```bash
 # List the available aliases when your memory starts to slip
 aliases = "!git config -l | grep ^alias\\. | cut -c 7- | sort"
 ```
 
-Notice the bang or exclamation mark `!` -- this notifies git that everything following it will be a shell command. In this case we pipe our configuration, extract the `alias.` entries, and list them alphabetically.
- 
-To go a step further, shell support also allows use to use shell functions. The following alias sets the default branch which is tracked by `origin`:
+Notice the use of the bang or exclamation mark `!`. This indicates that everything following it will be a shell command. In this case, we're piping our configuration, extracting the `alias.` entries, and listing them alphabetically.
+
+We can take things a step further with shell support and use shell functions. The following alias sets the default branch which is tracked by `origin`:
 
 ```bash
 # Sets the default branch for a remote. If no name is specified, use 'main'
 set-default = "!f() { name=${1-main}; git remote set-head origin $name; git symbolic-ref refs/remotes/origin/HEAD; };f"
 ```
 
-This can be hard to read if you're not familiar with the syntax, so let's break this down --
-- `!` is our indicator that we're issuing a shell command
-- `f() { ... };f` creates a function and executes it
+This syntax can be a bit tricky to read if you're not familiar with it, so let's break it down.
+- `!` indicates that we're issuing a shell command
+- `f() { ... };f` creates a shell function named f and immediately executes it.
 - `name=...` creates a local variable named `name`
-- `name=${1-main}` assigns our variable `name` the value of the first argument or default to "main" if no argument was supplied 
-- `git remote set-head origin $name` sets the default branch for origin to our variable value from `name`
-- `git symbolic-ref refs/remotes/origin/HEAD` prints the now default branch as a verification
+- `name=${1-main}` sets a shell variable named "name" equal to the first argument to the set-default alias (i.e., the branch name passed as an argument to the alias) or, if no argument is provided, to the string "main".
+- `git remote set-head origin $name` sets the default branch for the remote named "origin" to the branch specified by the `name` variable.
+- `git symbolic-ref refs/remotes/origin/HEAD` prints the [symbolic reference](https://git-scm.com/docs/git-symbolic-ref) to the HEAD branch of the "origin" remote, which should be the branch that was just set as the default.
 
-We can now run `git set-default my-branch` which will track the branch "my-branch" as the default branch for origin (more on how this may be helpful [later](#default-helper)). If we were to run `git set-default` then we'd track `main` as the default branch since no branch name was provided in the first argument.
+If you run git set-default my-branch, it will set "my-branch" as the default branch for the "origin" remote. If you run git set-default with no arguments, it will set "main" as the default branch.
 
 ## My favorite aliases
 
 ### Git lists
 
-Listing things in git can vary depending on the command. For example, if you want to list your local branches you could use `branch -l`.  If you want to list your stashes you'd use `stash list`. Rather than having to remember these, I find pluralization mor intuitive.
+When listing items in git, the command syntax can vary. For example, to list your local branches you could use `branch -l`, while to list your stashes you'd use `stash list`. To make the command syntax more natual to remember, you can add plural command aliases to your git configuration.
 
 ```bash
-# List branches by name
 branches = branch -l
-# List stashes, with a 'human' friendly date as the index.
 stashes = stash list --date=human
+tags = tag -l
+remotes = remote -v
+submodules = submodule status
 ```
 
 ### Human logs
 
-Git's `log` command supports about a trillion options and a majority of the time I just want to see commit titles, the author, and when the commit was made.  For this, I made myself a
+Git's `log` command supports about a trillion options and a majority of the time I just want to see basic information such as the commit titles, the author, and when the commit was made. For this, I made myself a
 "human friendly" git log alias:
 
 ```bash
+# Hash (yellow) / Branch (red) / Commit message / Author (blue) / Date (green)
 logh = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\\ %Cgreen\\ (%cd)" --decorate --date=local --graph
 ```
 
@@ -105,9 +107,9 @@ This gives a log output which is pretty easy to scan:
 
 ### Safer force push
 
-Pushing changes with `-force` can be dangerous and cause your co-workers to hate you. However, in the real world there _are_ situations where using `-force` may not be so bad. Perhaps you pushed a commit only to immediately realize you accidentally included some secrets which should be removed from history. In these situations, we can still provide ourselves (and our co-workers) a little protection by using the safer alternative: `git push --force-with-lease`
+Git's `push -force` option can be a dangerous command that forcefully overwrites the remote branch with your local branch, potentially erasing commits that your co-workers or collaborators have pushed in the meantime.
 
-`--force-with-lease` is still a force push, however, prior to pushing it will perform a check against remote and only push if the remote is unchanged.  e.g. Force push, but only if no additional changes have been committed.
+However, in some rare situations, such as when you accidentally pushed sensitive information and need to remove it from the history, you may need to use `push -force`. In these cases, you can mitigate the risk by using the `--force-with-lease` option instead. This option checks if the remote branch has changed since you last pulled it, and only pushes your changes if there are no new changes on the remote branch. This provides _some_ protection against accidentally overwriting your co-workers' work.
 
 ```bash
 # Safe-ish git push -f
@@ -116,7 +118,9 @@ pushf = push --force-with-lease
 
 ### Branch naming
 
-The group I work has a branch naming strategy that is a bit, er,  haphazard for the uninitiated.  Feature branches for instance are formatted as `feature/{name}`, task work done against a feature is tracked as `story/{story-#}-{name}`.  Meanwhile, if there's a hotfix for production, it's formatted as `hotfixes/h-{ticket-#}-{name}` which is especially troublesome because it's so easy to leave "hotfix" singular rather than "hotfixes" or forget that h- prefix -- both of which are required to trigger the correct ci/cd flow.
+The branch naming strategy used by my group is not very intuitive for new members. For instance, feature branches are named as `feature/{name}` and task work done against a feature is tracked as `story/{story-#}-{name}`. Additionally, hotfixes for production are named as `hotfixes/h-{ticket-#}-{name}`, which can be problematic as it's easy to forget the required "hotfixes" plural or the "h-" prefix that triggers the correct CI/CD flow.
+
+To safe a few brain cycles I created the following branch helpers:
 
 ```bash
 # git feature my-feature-name => feature/my-feature-name
@@ -133,7 +137,7 @@ While this is tailored to adhere to my teams wacky requirements, this is pretty 
 
 ### Checkpoint + Undo
 
-Often I get to a point when writing code where I'm generally happy with what I've written, but I want to experiment a bit.  I try my best to ensure each commit is able to build and run, but perhaps we're not to that point for a full commit.  For these situations I like to use 'checkpoint' commits:
+When writing code, you may sometimes reach a point where you're satisfied with what you've written so far but want to experiment further before making a full commit. This could happen, for example, when you have a working example that still needs some improvement before it can be merged into the main codebase. . To handle this situation, I use "checkpoint" commits.
 
 ```bash
 # Creates a checkpoint commit with all files -- including untracked
@@ -143,11 +147,13 @@ checkpoint = !git add -A && git commit -m 'CHECKPOINT'
 undo = reset HEAD~1 --mixed
 ```
 
-Now I can safely make changes built on top of my current progress without fear of losing my place.  If things don't work out I can use `git undo` to roll back, and if things went well and the code is ready I can use `git commit -a --amend` to promote my checkpoint to a full commit.
+A checkpoint commit captures your progress allowing you to safely make changes built on top of your current progress without fear of losing your place. If things don't work out, you can use `git undo` to roll back to the checkpoint.
+
+If you're happy with the changes and want to promote the checkpoint to a full commit, you can use `git commit -a --amend`.
 
 ### <a id="default-helper"></a>Default branch helper
 
-It can be tempting to use hard coded branch names in aliases, but with the shift in terminology to prefer `main` (or anything else really) over `master` this can complicate alias creation.  To help alleviate this, we can use a helper for when we need to reference the default branch.
+Instead of using hardcoded branch names in aliases, it's better to use a helper to reference the default branch. This practice became particularly helpful with the shift in terminology from 'master' to 'main'. The following alias creates a helper that returns the name of the currently tracked branch:
 
 ```bash
 default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
@@ -155,7 +161,7 @@ default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/orig
 
 Now `git default` will return the name of the currently tracked branch.
 
-You can change the default tracked branch using `git remote set-head origin {branch}`.  I like to verify after making this change, so I've created the following alias:
+You can switch the default tracked branch using `git remote set-head origin {branch}`. I like to verify after making this change, so I've created the following alias:
 
 ```bash
 # Sets the branch being tracked as origin/head
@@ -163,13 +169,13 @@ You can change the default tracked branch using `git remote set-head origin {bra
 set-default = "!f() { name=${1-master}; git remote set-head origin $name; git symbolic-ref refs/remotes/origin/HEAD; };f"
 ```
 
-The `git default` alias can now be used in places where you need to reference the default branch.  For example, the following will clean up any local branches which have been merged:
+The `git default` alias can now be used in places where you need to reference the default branch. For example, the following will clean up any local branches which have been merged:
 
 ```bash
 trim-merged = "!f() { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs git branch -d; };f"
 ```
 
-If you're working on a team it's a good idea to keep up with remote changes.  `git pullin` will pull rebase any remote commits into your local:
+If you're working with a team, it's essential to keep up with remote changes. Use the following alias to pull and rebase any remote commits into your local:
 
 ```bash
 # Pull changes for a branch and rebase them into our working directory
