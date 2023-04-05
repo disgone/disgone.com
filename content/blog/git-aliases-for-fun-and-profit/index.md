@@ -35,11 +35,13 @@ Aliases also support command arguments. Take the command for opening our `.gitco
 
 Previously we used the git command the `config` to create an alias for us but for this example let's practice adding our alias to our `.gitconfig` manually.
 
-Open up your `.gitconfig` file (`git config --global -e`). Find your `[alias]` section. If you're not following along, you may not have an `[alias]` section, so feel free to add it as well. Under `[alias]` add a new alias for `config --global -e` as `myconfig` and save your changes. You should have something to the following:
+Open up your `.gitconfig` file (`git config --global -e`). Look for the `[alias]` heading in the file. If it doesn't exist, add it as a new section. Under `[alias]` add a new entry for `myconfig = config --global -e` and save your changes. You should have something that looks similar to the following:
 
 ```bash
 [alias]
-# existing aliases if you had any
+# You may see additional entries if you already have existing aliases set up
+
+# Shortcut for opening the .gitconfig file for editing
 myconfig = config --global -e
 ```
 
