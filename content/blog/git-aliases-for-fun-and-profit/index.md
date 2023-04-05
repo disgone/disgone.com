@@ -11,25 +11,25 @@ Odds are if you're using version control today it's probably git. For this post,
 
 ## What is an alias?
 
-Git aliases are a way to create shortcuts or abbreviations for commonly used git [command](https://git-scm.com/docs/git#_high_level_commands_porcelain). They allow you to define a new command that combines one or more existing git commands or options into a shorter and more convenient command that you can easily remember and use.
+Git aliases are a way to create shortcuts or abbreviations for commonly used git [commands](https://git-scm.com/docs/git#_high_level_commands_porcelain). They allow you to define a new command that combines one or more existing git commands or options into a shorter and more convenient one that you can easily remember and use.
 
-Aliases can be added to your `.gitconfig` manually or directly using the `config` command. For example, to create a shortcut for the checkout command, use the following command:
+You can add aliases to your `.gitconfig` file manually or by using the `git config` command. For example, to create a shortcut for the `checkout` command, use the following:
 
 ```bash
 # Adds 'co' as an alias for checkout to your global config
 git config --global alias.co checkout
 ```
 
-This command sets up the co alias for checkout in your global config file. Now you can perform a checkout by typing git co <branch> instead of git checkout <branch>. Your inner productivity guru nods approvingly!
+This sets up the `co` alias for checkout in your global config file. Now you can perform a checkout by typing `git co` instead of `git checkout`. Your inner productivity guru nods approvingly!
 
-After creating an alias with the `config` command, we can open our `.gitconfig` file to view the changes. If you're not sure where your `.gitconfig` file is located, you can use the command git config --global -e to open it in your default editor. You should see a new section called [alias] with our co alias listed below it:
+After creating an alias with the `config` command, we can open our `.gitconfig` file to view the changes. If you're not sure where your `.gitconfig` file is located, you can use the command `git config --global -e` to open it in your default editor. You should see a new section called `[alias]` with our `co` entry listed below it:
 
 ```bash
 [alias]
 co = checkout
 ```
 
-In the `.gitconfig` file, the [alias] section defines shortcuts that can be used in place of git commands. The format for defining an alias is `<alias-name> = <command [args]>`, which means that `<alias-name>` is equivalent to `<command>`. For example, our co alias is equivalent to the checkout command.
+In the `.gitconfig` file, the `[alias]` section defines shortcuts that can be used in place of git commands. The format for defining an alias is `<alias-name> = <command [args]>`, which means that `<alias-name>` is equivalent to `<command>`. For example, our co alias is equivalent to the checkout command.
 
 Aliases also support command arguments. Take the command for opening our `.gitconfig` file for editing -- `git config --global -e`. Notice that we have a command `config` as well as two associated arguments `--global` and `-e`. Let's add an alias to make it easier to edit our config file using this command.
 
