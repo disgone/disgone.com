@@ -1,0 +1,23 @@
+{
+    "aliases": [
+        "https://hachyderm.io/@disgone",
+        "https://hachyderm.io/users/disgone"
+    ],
+    "links": [
+        {
+            "href": "https://hachyderm.io/@disgone",
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html"
+        },
+        {
+            "href": "https://hachyderm.io/users/disgone",
+            "rel": "self",
+            "type": "application/activity+json"
+        },
+        {
+            "rel": "http://ostatus.org/schema/1.0/subscribe",
+            "template": "https://hachyderm.io/authorize_interaction?uri={uri}"
+        }
+    ],
+    "subject": "acct:disgone@hachyderm.io"
+}
