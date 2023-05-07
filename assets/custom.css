@@ -1,0 +1,52 @@
+.social a {
+    border: none;
+    margin-right: .25rem;
+}
+
+a.goog:hover,
+a.goog:active,
+a.goog:focus {
+    --color: #dd4b39;
+    border-color: var(--color);
+    color: var(--color);
+}
+
+a.twit:hover,
+a.twit:active,
+a.twit:focus {
+    --color: #00aced;
+    border-color: var(--color);
+    color: var(--color);
+}
+
+a.gh:hover,
+a.gh:active,
+a.gh:focus {
+    --color: #000000;
+    border-color: var(--color);
+    color: var(--color);
+}
+
+a.fb:hover,
+a.fb:active,
+a.fb:focus {
+    --color: #3b5998;
+    border-color: var(--color);
+    color: var(--color);
+}
+
+a.stack:hover,
+a.stack:active,
+a.stack:focus {
+    --color: #f48024;
+    border-color: var(--color);
+    color: var(--color);
+}
+
+a.mstdn:hover,
+a.mstdn:active,
+a.mstdn:focus {
+    --color: #2b90d9;
+    border-color: var(--color);
+    color: var(--color);
+}

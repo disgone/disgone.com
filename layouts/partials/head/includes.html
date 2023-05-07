@@ -20,3 +20,9 @@
 {{ with $stylesheet }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{end}}
+
+{{ $customCSS := resources.Get "custom.css"  }}
+{{ $customCSS = $customCSS | fingerprint }}
+{{ with $customCSS }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{end}}
