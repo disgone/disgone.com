@@ -23,6 +23,7 @@ enableRobotsTXT = true
     facebook = "the.shaun.smith"
     stackoverflow = "253542"
     email = "shaunsmith@disgone.com"
+    mastodon = "hachyderm.io/@disgone"
 
 [permalinks]
     pages = ":filename/"

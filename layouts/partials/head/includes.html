@@ -1,0 +1,22 @@
+<link rel='dns-prefetch' href='https://fonts.googleapis.com'>
+<link rel="icon" href="{{ .Site.Params.assets.favicon | default "favicon.ico" | absURL }}">
+<base href="{{ .Site.BaseURL }}" />
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml">
+{{ end }}
+
+{{ with .Site.Social.facebook }}
+<link rel="me" href="https://www.facebook.com/{{.}}" />
+{{ end }}
+
+{{ with .Site.Social.mastodon }}
+<link rel="me" href="https://{{.}}" />
+{{ end }}
+
+{{ $stylesheet := resources.Get "main.css"  }}
+{{ $stylesheet = $stylesheet | fingerprint }}
+{{ with $stylesheet }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{end}}
