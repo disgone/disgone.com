@@ -1,27 +1,38 @@
 {{ partial "sprites.html" . }}
-
 <section class="social">
     {{ with .Site.Social.email }}
-        <a href="mailto:{{ . }}"><svg class="icon"><use xlink:href="#envelope"></use></svg></a>
+        <a href="mailto:{{ . }}" title="Email me">
+            <svg class="icon"><use xlink:href="#envelope"></use></svg>
+        </a>
     {{ end }}
 
     {{ with .Site.Social.github }}
-        <a href="https://github.com/{{ . }}" class="gh"><svg class="icon"><use xlink:href="#github"></use></svg></a>
+        <a href="https://github.com/{{ . }}" title="Follow me on Github" class="gh">
+            <svg class="icon" alt="Github logo"><use xlink:href="#github"></use></svg>
+        </a>
     {{ end }}
 
     {{ with .Site.Social.twitter }}
-        <a href="https://twitter.com/{{ . }}" class="twit"><svg class="icon"><use xlink:href="#twitter"></use></svg></a>
+        <a href="https://twitter.com/{{ . }}" title="Follow me on Twitter" class="twit">
+            <svg class="icon" alt="Twitter logo"><use xlink:href="#twitter"></use></svg>
+        </a>
     {{ end }}
 
     {{ with .Site.Social.facebook }}
-        <a href="https://www.facebook.com/{{ . }}" class="fb"><svg class="icon"><use xlink:href="#facebook"></use></svg></a>
+        <a href="https://www.facebook.com/{{ . }}" title="Follow me on Facebook" class="fb">
+            <svg class="icon" alt="Facebook logo"><use xlink:href="#facebook"></use></svg>
+        </a>
     {{ end }}
 
     {{ with .Site.Social.stackoverflow }}
-        <a href="https://stackoverflow.com/users/{{ . }}" class="stack"><svg class="icon"><use xlink:href="#stack-overflow"></use></svg></a>
+        <a href="https://stackoverflow.com/users/{{ . }}" title="Follow me on Stack Overflow" class="stack">
+            <svg class="icon" alt="Stack Overflow logo"><use xlink:href="#stack-overflow"></use></svg>
+        </a>
     {{ end }}
 
     {{ with .Site.Social.mastodon }}
-        <a href="https://{{ . }}" class="mstdn"><svg class="icon"><use xlink:href="#mastodon"></use></svg></a>
+        <a href="https://{{ . }}"  title="Follow me on Mastodon" class="mstdn">
+            <svg class="icon" alt="Mastodon logo"><use xlink:href="#mastodon"></use></svg>
+        </a>
     {{ end }}
 </section>
