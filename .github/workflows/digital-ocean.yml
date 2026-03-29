@@ -35,4 +35,4 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        run: rsync --delete -rvzh ./public/ github@disgone.com:/var/www/disgone.com/
+        run: rsync --delete -rvzh ./public/ github@deploy.disgone.com:/var/www/disgone.com/
