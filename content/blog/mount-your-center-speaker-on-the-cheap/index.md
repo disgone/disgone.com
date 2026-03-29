@@ -11,20 +11,19 @@ aliases: [
 ]
 ---
 
-{{< vault-figure src="images/front.jpg" alt="Front speaker mounted above screen" title="The mounted speaker" >}}
+![A flat screen television with a center channel speaker mounted above it](images/front.jpg "The mounted speaker resting on the shelf above the television")
 
 Santa was gracious enough to deliver a Polk CS2 center speaker for my home theatre system last month.  This provided one more step down the upgrade path from my original Onyko HT-R340, a budget 5.1 home theatre in a box.  There was just one catch between me and center channel bliss -- where to put it.
 
-I knew the CS2 would be bigger than the speaker it was replacing, but that didn't propery sink in completely until after it arrived.  The previous center channel was just small enough that fit into the gap on the front of the console between the TV stand and the edge, while also being short enough not to block the screen.  The CS2 does not share this trait.  Even if I somehow managed to fit it onto the console the lengh and heigh would mean nowhere was safe without some screen interference. To further complicate the matter I'm currently renting, which means:
+I knew the CS2 would be bigger than the speaker it was replacing, but that didn’t properly sink in until after it arrived. The previous center channel was just small enough to fit into the gap on the front of the console between the TV stand and the edge, while also being short enough not to block the screen. The CS2 does not share this trait. Even if I somehow managed to fit it onto the console, its length and height meant it would interfere with the screen no matter where I placed it.
 
-- Tools and workspace is limited
-- Wall mounts are best avoided
+Adding to the challenge, I’m currently renting with limited tools and workspace and was keen to avoid unnecessary damage to the walls.
 
 ## The Fix
 
-My first instinct was to try to find a shelf or cubby which could support the TV and allow the CS2 to sit neatly underneath.  However, finding a shelf which I felt was strudy enough that I'd trust my television set on was a bit of a strech.  Luckily, I came across [this post](http://www.avsforum.com/forum/89-speakers/630450-energy-owners-thread-289.html#post16188142) on AVS where an ingenious user had attached standard {{< amazon asin="B0758C7XQS" title="shelf brackets" >}} directly to the rear of the set using the VESA mounting holes. EUREKA!
+My first instinct was to find a shelf sturdy enough to hold the television with enough clearance for the CS2 to sit underneath, but nothing I trusted with the screen ever materialized. Then I ran across [this post](http://www.avsforum.com/forum/89-speakers/630450-energy-owners-thread-289.html#post16188142) on AVS where an ingenious user bolted standard {{< amazon asin="B0758C7XQS" title="shelf brackets" >}} into the TV’s VESA mount holes. EUREKA!
 
-I'm paranoid and was concerned about the weight of the speaker, so I decided to tweak his idea. Instead of using the shelving brackets, I could use the ubiquitous modular wire closet system shelving.  This would allow me to mount the {{< amazon asin="B000BQO1DA" title="shelving track">}} across both pairs of VESA points rather than only on upper two, speading the load a little more evenly (in my mind at least).
+I’m a bit paranoid and was concerned about the weight of the speaker, so I decided to tweak the idea. Instead of using standard shelving brackets, I opted for a modular wire closet shelving system. This allowed me to mount the shelving track across both pairs of VESA points rather than only the upper two, spreading the load a bit more evenly (at least in my mind).
 
 My set is a 54" TC-P54V10 and these are the parts I used.  Of course, verify your sizes based on the [VESA standard](https://en.wikipedia.org/wiki/Flat_Display_Mounting_Interface) your setup requires.
 
