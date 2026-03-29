@@ -11,9 +11,7 @@ aliases: [
 ]
 ---
 
-{{< figure variant="small" title="The mounted speaker" >}}
-{{< post-image src="images/front.jpg" alt="Front speaker mounted above screen" >}}
-{{< /figure >}}
+{{< vault-figure src="images/front.jpg" alt="Front speaker mounted above screen" title="The mounted speaker" >}}
 
 Santa was gracious enough to deliver a Polk CS2 center speaker for my home theatre system last month.  This provided one more step down the upgrade path from my original Onyko HT-R340, a budget 5.1 home theatre in a box.  There was just one catch between me and center channel bliss -- where to put it.
 
@@ -53,11 +51,7 @@ It's pretty straight forward from here:
 Once the rails are attached, add your shelving brackets and shelving material and you should be ready to throw the speaker on top.
 
 <div class='dual'>
-{{< figure title="Shelving track attached to the VESA mounts on the rear of the set" >}}
-{{< post-image src="images/rear-side.jpg" alt="Front speaker mounted above screen" >}}
-{{< /figure >}}
+{{< vault-figure src="images/rear-side.jpg" alt="Front speaker mounted above screen" title="Shelving track attached to the VESA mounts on the rear of the set" >}}
 
-{{< figure title="The center channel, sitting on its shelf. I used two pieces of scrap shelving to get it the desired height." >}}
-{{< post-image src="images/rear.jpg" alt="Front speaker mounted above screen" >}}
-{{< /figure >}}
+{{< vault-figure src="images/rear.jpg" alt="Front speaker mounted above screen" title="The center channel, sitting on its shelf. I used two pieces of scrap shelving to get it the desired height." >}}
 </div>

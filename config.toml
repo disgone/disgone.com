@@ -2,28 +2,46 @@ baseURL = "https://www.disgone.com/"
 languageCode = "en-US"
 canonifyurls = true
 title = "Shaun Smith"
-theme = "hugo-theme-vault"
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
 enableRobotsTXT = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/disgone/hugo-theme-vault"
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+    [[module.imports.mounts]]
+      source = "layouts/_shortcodes"
+      target = "layouts/shortcodes"
+    [[module.imports.mounts]]
+      source = "static"
+      target = "static"
 
 [params]
     description= "Personal website of Shaun Smith, a software developer in the Dallas, Texas area."
     paginate = 15
     latestposts = 5
     error_404 = "Oh man, I can't find what you're looking for."
-    tokenSeperator = " | "
+    tokenSeparator = " | "
     date_format = "January 2, 2006"
     copyright = "2003 - 2023 Shaun Smith"
 
-[social]
-    twitter = "disgone"
-    github = "disgone"
-    facebook = "the.shaun.smith"
-    stackoverflow = "253542"
-    email = "shaunsmith@disgone.com"
-    mastodon = "hachyderm.io/@disgone"
+    [params.social]
+        twitter = "disgone"
+        github = "disgone"
+        facebook = "the.shaun.smith"
+        stackoverflow = "253542"
+        email = "shaunsmith@disgone.com"
+        mastodon = "hachyderm.io/@disgone"
+
+    [params.custom]
+        css = ["custom.css"]
 
 [permalinks]
     pages = ":filename/"
@@ -54,3 +72,9 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
