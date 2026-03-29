@@ -1,11 +1,15 @@
-# Update the NODE_VERSION arg in docker-compose.yml to pick a Node version: 18, 16, 14
-ARG NODE_VERSION=16
+# Update the NODE_VERSION arg in docker-compose.yml to pick a Node version: 20
+ARG NODE_VERSION=20
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${NODE_VERSION}
 
 # VARIANT can be either 'hugo' for the standard version or 'hugo_extended' for the extended version.
 ARG VARIANT=hugo
 # VERSION can be either 'latest' or a specific version number
 ARG VERSION=latest
+
+# Download Go (required for Hugo modules)
+RUN curl -sL https://go.dev/dl/go1.21.6.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 # Download Hugo
 RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \

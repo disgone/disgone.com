@@ -8,9 +8,7 @@ tags: ["tech", "raspberrypi"]
 type: post
 ---
 
-{{< figure variant="small" >}}
-{{< post-image src="images/pi-case.jpg" alt="Raspberry PI in it's case, ready to bust advertisements" >}}
-{{< /figure >}}
+{{< vault-image src="images/pi-case.jpg" alt="Raspberry PI in it's case, ready to bust advertisements" class="inset" >}}
 
 The internet and ads, name a more iconic duo.
 
@@ -64,9 +62,7 @@ For the operating system I'll be using [Rasbian Stretch Lite](https://www.raspbe
 
 Etcher makes it pretty painless as you don't even need to extract the image from the zip file.  Simply pretty "Select Image", choose the zip file then proceed to select the SD card by pressing "Select drive".  All that's left is to mash 'Flash!' and wait for the process to complete.
 
-{{< figure variant="small" title="Writing the image to the SD via Etcher is just a 1-2-3 step process." >}}
-{{< post-image src="images/etcher.jpg" alt="Etcher GUI" >}}
-{{< /figure >}}
+{{< vault-figure src="images/etcher.jpg" alt="Etcher GUI" title="Writing the image to the SD via Etcher is just a 1-2-3 step process." >}}
 
 ### Enable SSH
 Without a monitor we'll need to be able to connect to the Pi remotely.  For this we will need to enable [SSH](https://en.wikipedia.org/wiki/Secure_Shell) on the Pi, as it is disabled by default.  Luckily we can enable it by creating an empty file named "ssh" (without any extension) into the [root directory of the SD card](/images/pihole/pi-boot-drive.jpg).  When the Pi boots it will detect the file and enable SSH access. If you skip this step and configure the Pi connected to a monitor you can always go back and enable SSH via [raspi-config](https://www.raspberrypi.org/documentation/remote-access/ssh/).
@@ -79,11 +75,9 @@ Open Putty, then in the "host name" box enter the IP address for you Pi then hit
 
 The first order of business is to run a software update via ````sudo apt-get update && sudo apt-get install````
 
-Raspbian comes with a configuration utility to help you set up your Pi.  It's a pretty good idea to go ahead and change a couple of things like host name and the default password.  You can invoke the configuration utility by running ````sudo raspi-config````
+Raspbian comes with a configuration utility to help you set up your Pi.  It's a pretty good idea to go ahead and change a couple of things like host name and default password.  You can invoke the configuration utility by running ````sudo raspi-config````
 
-{{< figure title="The raspi-config configuration utility" >}}
-{{< post-image src="images/pi-config.jpg" alt="The Raspberry's built in configuration utility, raspi-config" >}}
-{{< /figure >}}
+{{< vault-figure src="images/pi-config.jpg" alt="The Raspberry's built in configuration utility, raspi-config" title="The raspi-config configuration utility" >}}
 
 You can browse the dialog using the arrows, tab and enter.  I'd recommend the following:
 
@@ -130,14 +124,10 @@ During the install process you'll be prompted for a few of items.
 
 At this point Pi-hole will continue it's install process.  Once it completes it will (hopefully!) display a "Installation Complete!" screen with some important information, such as the Pi's IP addresses, UI address as well as the generated admin password.  If you updated your IP address now would be a good time for a reboot.
 
-{{< figure title="Installation Complete!  The post install confirmation screen includes all the pertinent details you'll need post-install." >}}
-{{< post-image src="images/pi-hole-completed.jpg" alt="Completed install" >}}
-{{< /figure >}}
+{{< vault-figure src="images/pi-hole-completed.jpg" alt="Completed install" title="Installation Complete!  The post install confirmation screen includes all the pertinent details you'll need post-install." >}}
 
 At this point, you've got a base Pi-hole up and running.  You can now log into your Pi-hole admin panel by visiting *http://<Your-Pi-Ip>/admin/*.  From the dashboard you can configure additional rules, install or remove additional block lists, as well as enable/disable the blocking protection.
 
-{{< figure title="The Pi-hole God Console&#8482;" >}}
-{{< post-image src="images/pi-hole-dashboard.jpg" alt="The Pi-hole God Console&#8482;" >}}
-{{< /figure >}}
+{{< vault-figure src="images/pi-hole-dashboard.jpg" alt="The Pi-hole God Console&#8482;" title="The Pi-hole God Console&#8482;" >}}
 
 The final step is to [configure your router](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) to use Pi-hole as it's primary DNS option.  Due to the large swath of router makes and models avaiable, you'll probably need to hit up Google for some assistance if you get lost.

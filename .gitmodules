@@ -1,4 +1,0 @@
-[submodule "themes/hugo-theme-vault"]
-	path = themes/hugo-theme-vault
-	url = https://github.com/Disgone/hugo-theme-vault.git
-    branch = main

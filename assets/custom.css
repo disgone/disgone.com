@@ -1,6 +1,7 @@
 .social a {
     border: none;
     margin-right: .25rem;
+    text-decoration: none;
 }
 
 a.goog:hover,

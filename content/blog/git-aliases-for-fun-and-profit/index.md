@@ -103,9 +103,7 @@ logh = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\\ %Cgr
 
 This gives a log output which is pretty easy to scan:
 
-{{< figure title="git logh output" >}}
-{{< post-image src="images/git-log.jpg" alt="Git log, with custom formatting" >}}
-{{< /figure >}}
+{{< vault-figure src="images/git-log.jpg" alt="Git log, with custom formatting" title="git logh output" >}}
 
 ### Safer force push
 
